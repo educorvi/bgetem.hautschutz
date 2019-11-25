@@ -6,6 +6,12 @@
   <configure zcml:condition="installed AccessControl.security">
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="bgetem.hautschutz.AddSchutzhandschuh"
+        title="bgetem.hautschutz: Add Schutzhandschuh"
+    />
+
+
 
   </configure>
 
