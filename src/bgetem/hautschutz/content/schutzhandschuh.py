@@ -59,4 +59,5 @@ class ISchutzhandschuh(model.Schema):
 @implementer(ISchutzhandschuh)
 class Schutzhandschuh(Container):
     """
+    Das ist die Klasse fuer den Schutzhandschuh.
     """
