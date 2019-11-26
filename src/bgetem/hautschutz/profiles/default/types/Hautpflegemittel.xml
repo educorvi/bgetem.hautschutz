@@ -10,7 +10,7 @@
       name="title">Hautpflegemittel</property>
   <property
       i18n:translate=""
-      name="description">Hautpflegemittel für die betriebliche Hautpflege</property>
+      name="description">Hautpflegemittel fuer die betriebliche Hautpflege</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Hautpflegemittel</property>
