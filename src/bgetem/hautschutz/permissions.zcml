@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="bgetem.hautschutz.AddHautschutzmittel"
+        title="bgetem.hautschutz: Add Hautschutzmittel"
+    />
+
+
+    <permission
         id="bgetem.hautschutz.AddSchutzhandschuh"
         title="bgetem.hautschutz: Add Schutzhandschuh"
     />
