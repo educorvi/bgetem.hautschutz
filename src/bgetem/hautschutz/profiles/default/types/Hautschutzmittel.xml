@@ -10,7 +10,7 @@
       name="title">Hautschutzmittel</property>
   <property
       i18n:translate=""
-      name="description">Hautschutzmittel für den betrieblichen Hautschutz</property>
+      name="description">Hautschutzmittel fuer den betrieblichen Hautschutz</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Hautschutzmittel</property>
