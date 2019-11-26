@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="bgetem.hautschutz.AddHautreinigungsmittel"
+        title="bgetem.hautschutz: Add Hautreinigungsmittel"
+    />
+
+
+    <permission
         id="bgetem.hautschutz.AddHautpflegemittel"
         title="bgetem.hautschutz: Add Hautpflegemittel"
     />
