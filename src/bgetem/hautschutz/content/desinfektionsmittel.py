@@ -20,6 +20,27 @@ class IDesinfektionsmittel(model.Schema):
 #            source=desinf_anwendung,
 #            required=True,)
 
+#    produktgruppe = schema.Choice
+
+#    wirksamkeit = schema.List
+
+#    einwirkung = schema.Choice
+
+#    pruefung = schema.Choice
+
+    bemerkungen = schema.Text(title=u"Bemerkungen", required=False)
+
+#    bild = NamedBlobImage(title=u"Produktbild", required=False)
+
+#    hersteller = RelationChoice(
+#            title=u"Hersteller oder Lieferant",
+#            source=ObjPathSourceBinder(),
+#            required=False,
+#            )
+
+
+
+
 @implementer(IDesinfektionsmittel)
 class Desinfektionsmittel(Container):
     """
