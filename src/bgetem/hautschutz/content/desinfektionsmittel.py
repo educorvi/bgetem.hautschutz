@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# from plone.app.textfield import RichText
+from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.dexterity.content import Container
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from zope import schema
 from zope.interface import implementer
 
 
@@ -14,12 +14,12 @@ from zope.interface import implementer
 
 
 class IDesinfektionsmittel(model.Schema):
-    """ Marker interface and Dexterity Python Schema for Desinfektionsmittel
+    """ Marker interface and Dexterity Python Schema for Hautpflegemittel
     """
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
 
-    # model.load('desinfektionsmittel.xml')
+    # model.load('hautpflegemittel.xml')
 
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
@@ -55,7 +55,6 @@ class IDesinfektionsmittel(model.Schema):
     #     title=_(u'Secret Notes (only for site-admins)'),
     #     required=False
     # )
-
 
 @implementer(IDesinfektionsmittel)
 class Desinfektionsmittel(Container):
