@@ -42,7 +42,7 @@ class ISchutzhandschuh(model.Schema):
     schichtstaerke_max = schema.Float(title=u"Schichtstärke (max) in mm", required=False)
 
     gesamtlaenge_von = schema.Int(title=u"Gesamtlänge (von) in mm", required=False)
-    gesamtlaenge_bis = schema.Int(title=u"Gesamtlänge (bis) in mm", requierd=False)
+    gesamtlaenge_bis = schema.Int(title=u"Gesamtlänge (bis) in mm", required=False)
 
 #    cecategory = schema.Choice(title=u"CE-Kategorie", vocabulary=cecatcalues)
 
