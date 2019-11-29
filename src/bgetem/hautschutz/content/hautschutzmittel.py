@@ -9,7 +9,7 @@ from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
 
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+#from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 # from bgetem.hautschutz import _
 
@@ -42,11 +42,11 @@ class IHautschutzmittel(model.Schema):
 
 #    zusatzfunktion = schema.Choice(title==u'Zusatzfunktion', vocabulary=zusatzVocabulary, default="keine", required=False)
 
-    inhaltsstoffe = schema.List(title=u'Inhaltsstoffe', value_type=schema.TextLine(), required=False)
+#    inhaltsstoffe = schema.List(title=u'Inhaltsstoffe', value_type=schema.TextLine(), required=False)
 
-    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
+#    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
 
-    duftstoffe = schema.List(title=u"Duftstoffe", value_type=schema.TextLine(), required=Falase)
+#    duftstoffe = schema.List(title=u"Duftstoffe", value_type=schema.TextLine(), required=Falase)
 
     bemerkungen = schema.Text(title=u"Bemerkungen", required=False)
 
