@@ -5,7 +5,7 @@ from zope import schema
 from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe
 
-# from bgetem.hautschutz import _
+from bgetem.hautschutz import _
 
 
 class IDesinfektionsmittel(model.Schema):
@@ -13,15 +13,15 @@ class IDesinfektionsmittel(model.Schema):
     Schema eines Desinfektionsmittels
     """
 
-    title = schema.TextLine(title=u"Produktname")
+    title = schema.TextLine(title=_(u"Produktname"))
 
     anwendungsbereich = schema.Choice(
-            title=u"Anwendungsbereich",
+            title=_(u"Anwendungsbereich"),
             source=desinf_anwendung,
             required=True,)
 
     produktgruppe = schema.Choice(
-            title=u"Produktgruppe",
+            title=_(u"Produktgruppe"),
             source=desinf_produktgruppe,
             default=u'haendedesinketionsmittel',
             required=True,
