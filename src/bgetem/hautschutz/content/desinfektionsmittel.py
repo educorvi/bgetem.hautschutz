@@ -4,6 +4,7 @@ from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe, desinf_wirksamkeit, einwirkzeit, desinf_pruefung
+from plone.namedfile.field import NamedBlobImage
 
 from bgetem.hautschutz import _
 
@@ -49,6 +50,7 @@ class IDesinfektionsmittel(model.Schema):
 
     bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
+    bild = NamedBlobImage(title=u"Produktbild", required=False)
 
 #    hersteller = RelationChoice(
 #            title=u"Hersteller oder Lieferant",
