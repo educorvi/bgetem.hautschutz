@@ -3,7 +3,7 @@ from plone.dexterity.content import Container
 from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe, desinf_wirksamkeit
+from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe, desinf_wirksamkeit, einwirkzeit, desinf_pruefung
 
 from bgetem.hautschutz import _
 
@@ -34,13 +34,21 @@ class IDesinfektionsmittel(model.Schema):
             required=True,
     )
 
-#    einwirkung = schema.Choice
+    einwirkung = schema.Choice(
+            title = _(u"Einwirkzeit"),
+            source = einwirkzeit,
+            required = True,
+    )
 
-#    pruefung = schema.Choice
+    pruefung = schema.Choice(
+            title=_(u"Wirksamkeit geprüft und gelistet von:"),
+            source=desinf_pruefung,
+            default=u'vah',
+            required=True,
+    )
 
-    bemerkungen = schema.Text(title=u"Bemerkungen", required=False)
+    bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
-#    bild = NamedBlobImage(title=u"Produktbild", required=False)
 
 #    hersteller = RelationChoice(
 #            title=u"Hersteller oder Lieferant",

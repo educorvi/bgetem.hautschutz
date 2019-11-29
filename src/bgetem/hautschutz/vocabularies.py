@@ -20,3 +20,23 @@ desinf_wirksamkeit = SimpleVocabulary((
     SimpleTerm(value=u'fungizid', token=u'fungizid', title=_(u'Fungizid (d.h. wirksam gegen Schimmelpilze und deren Sporen, z.B.: Aspergillus)')),
     SimpleTerm(value=u'viruzid', token=u'viruzid', title=_(u'Viruswirksamkeit (d.h. begrenzt viruzid oder viruzid gemäß den Anordnungen nach RKI/DVV (2))'))
     ))
+
+desinf_wirksamkeit = SimpleVocabulary((
+    SimpleTerm(value=u'bakterizid', token=u'bakterizid', title=_(u'Bakterizid (d.h. wirksam gegen Bakterien, ohne bakterielle Sporen)')),
+    SimpleTerm(value=u'begrenzt_viruzid', token=u'begrenzt_viruzid', title=_(u'Begrenzt viruzid PLUS')),
+    SimpleTerm(value=u'levurozide', token=u'levurozide', title=_(u'Levurozide (d.h. wirksam gegen Hefen, Sporen)')),
+    SimpleTerm(value=u'mykobakterizid', token=u'mykobakterizid', title=_(u'Mykobakterizid')),
+    SimpleTerm(value=u'fungizid', token=u'fungizid', title=_(u'Fungizid (d.h. wirksam gegen Schimmelpilze und deren Sporen, z.B.: Aspergillus)')),
+    SimpleTerm(value=u'viruzid', token=u'viruzid', title=_(u'Viruswirksamkeit (d.h. begrenzt viruzid oder viruzid gemäß den Anordnungen nach RKI/DVV (2))'))
+    ))
+
+einwirkung = [
+    SimpleTerm(u"auswahl", u"auswahl", _(u"bitte auswählen")),
+    SimpleTerm(u"30", u"30", _(u"30")),
+    SimpleTerm(u"60", u"60", _(u"60")),]
+einwirkzeit = SimpleVocabulary(einwirkung)
+
+desinf_pruefung = SimpleVocabulary((
+    SimpleTerm(value=u'vah', token=u'vah', title=_(u'VAH (Verband für Angewandte Hygiene e.V.)')),
+    SimpleTerm(value=u'rki', token=u'rki', title=_(u'RKI (Robert Koch Institut)')),
+    ))
