@@ -3,7 +3,7 @@ from plone.dexterity.content import Container
 from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe
+from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe, desinf_wirksamkeit
 
 from bgetem.hautschutz import _
 
@@ -26,7 +26,13 @@ class IDesinfektionsmittel(model.Schema):
             default=u'haendedesinketionsmittel',
             required=True,
     )
-#    wirksamkeit = schema.List
+    
+    wirksamkeit = schema.List(
+            title=_(u"Wirksamkeit"),
+            value_type=schema.Choice(
+                source=desinf_wirksamkeit,),
+            required=True,
+    )
 
 #    einwirkung = schema.Choice
 
