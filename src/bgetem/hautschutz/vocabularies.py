@@ -51,3 +51,10 @@ schmutzVocabulary = SimpleVocabulary((
     SimpleTerm(value=u"id_normal", token=u"id_normal", title=_(u"normale Verschmutzung")),
     SimpleTerm(value=u"id_grob", token=u"id_grob", title=_(u"grobe Verschmutzung"))
     ))
+
+hautschutzmittelanwendungen = SimpleVocabulary((
+    SimpleTerm(value=u"id_chemisch", token=u"id_chemisch", title=_(u"chemisch")),
+    SimpleTerm(value=u"id_biologisch", token=u"id_biologisch", title=_(u"biologisch")),
+    SimpleTerm(value=u"id_rauche", token=u"id_rauche", title=_(u"Schweissrauche")),
+    SimpleTerm(value=u"id_uvstrahlen", token=u"id_uvstrahlen", title=_(u"UV-Strahlen")),
+    ))

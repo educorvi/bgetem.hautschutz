@@ -8,24 +8,11 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
+from bgetem.hautschutz.vocabularies import hautschutzmittelanwendungen
 
 #from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-# from bgetem.hautschutz import _
-
-#anwendungen = [
-#        SimpleTerm(u"id_chemisch", u"id_chemisch", u"chemisch"),
-#        SimpleTerm(u"id_biologisch", u"id_biologisch", u"biologisch"),
-#        SimpleTerm(u"id_rauche", u"id_rauche", u"Schweissrauche"),
-#        SimpleTerm(u"id_uvstrahlen", u"id_uvstrahlen", u"UV-Strahlen"),
-#        ]
-
-#anwendungVocabulary = SimpleVocabulary(anwendungen)
-
-#zusatzVocabulary = SimpleVocabulary.fromItems((
-#    (u"gegen Hauterweichung", "id_hauterweichung"),
-#    (u"keine", "keine")))
-
+from bgetem.hautschutz import _
 
 class IHautschutzmittel(model.Schema):
     """
@@ -38,7 +25,7 @@ class IHautschutzmittel(model.Schema):
 
     uvschutzfaktor = schema.TextLine(title=u'Sonnenschutzfaktor', required=False)
 
-    schweissrauche = schema.TextLine(title=u'Zusatzangaben bei SChweissarbeiten', required=False)
+    schweissrauche = schema.TextLine(title=u'Zusatzangaben bei Schweissarbeiten', required=False)
 
 #    zusatzfunktion = schema.Choice(title==u'Zusatzfunktion', vocabulary=zusatzVocabulary, default="keine", required=False)
 
