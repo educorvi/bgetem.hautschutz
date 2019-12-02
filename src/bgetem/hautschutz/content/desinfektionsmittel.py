@@ -8,11 +8,8 @@ from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
 from plone.app.vocabularies.catalog import CatalogSource
-#from plone.formwidget.contenttree import ObjPathSourceBinder
-
 
 from bgetem.hautschutz import _
-
 
 class IDesinfektionsmittel(model.Schema):
     """
@@ -34,23 +31,23 @@ class IDesinfektionsmittel(model.Schema):
     )
     
     wirksamkeit = schema.List(
-            title=_(u"Wirksamkeit"),
-            value_type=schema.Choice(
-                source=desinf_wirksamkeit,),
-            required=True,
+        title=_(u"Wirksamkeit"),
+        value_type=schema.Choice(
+        source=desinf_wirksamkeit,),
+        required=True,
     )
 
     einwirkung = schema.Choice(
-            title = _(u"Einwirkzeit"),
-            source = einwirkzeit,
-            required = True,
+        title = _(u"Einwirkzeit"),
+        source = einwirkzeit,
+        required = True,
     )
 
     pruefung = schema.Choice(
-            title=_(u"Wirksamkeit geprüft und gelistet von:"),
-            source=desinf_pruefung,
-            default=u'vah',
-            required=True,
+        title=_(u"Wirksamkeit geprüft und gelistet von:"),
+        source=desinf_pruefung,
+        default=u'vah',
+        required=True,
     )
 
     bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
@@ -58,14 +55,11 @@ class IDesinfektionsmittel(model.Schema):
     bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
     hersteller = RelationChoice(
-    title=_(u"Hersteller oder Lieferant"),
-    source=CatalogSource(portal_type="Document",),
-    required=False,
+        title=_(u"Hersteller oder Lieferant"),
+        source=CatalogSource(portal_type="Document",),
+        required=False,
     )
 
-
-
-@implementer(IDesinfektionsmittel)
 class Desinfektionsmittel(Container):
     """
     """

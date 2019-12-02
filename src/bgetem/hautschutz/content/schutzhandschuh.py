@@ -7,7 +7,7 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import material
+from bgetem.hautschutz.vocabularies import material, pruefung374alt
 from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
@@ -15,7 +15,10 @@ from plone.app.vocabularies.catalog import CatalogSource
 
 from bgetem.hautschutz import _
 
+from plone.autoform import directives #as form
+
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from z3c.form.browser.radio import RadioFieldWidget
 
 class ISchutzhandschuh(model.Schema):
     """ 
@@ -53,18 +56,19 @@ class ISchutzhandschuh(model.Schema):
 
 #    allergene = schema.List(title=u"Allergene", value_type=schema.Choice(vocabulary=allergene_vocab), required=False)
 
-#    m1.fieldset(
-#        'chemie',
-#        label=u"Chemische/Biologische Risiken",
-#        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
-#    )
+    model.fieldset(
+        'chemie',
+        label=u"Chemische/Biologische Risiken",
+        #fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
+        fields=['norm374_2003']
+    )
 
-#    form.widget(norm374_2003=CheckBoxFieldWidget)
-#    norm374_2003 = schema.List(title=u"Norm EN 374-1:2003 (3 Prüfchemikalien)",
-#                               value_type=schema.Choice(vocabulary=pruefung374alt),
-#                               required=False)
+    directives.widget('norm374_2003', CheckBoxFieldWidget)
+    norm374_2003 = schema.List(title=u"Norm EN 374-1:2003 (3 Prüfchemikalien)",
+                               value_type=schema.Choice(vocabulary=pruefung374alt),
+                               required=False)
 
-#    form.widget(norm374_2016=RadioFieldWidget)
+#    directives.widget('norm374_2016', RadioFieldWidget)
 #    norm374_2016 = schema.Choice(title=u"Norm EN ISO 374-1:2016",
 #                                 vocabulary=pruefung374neu,
 #                                 default='keine',

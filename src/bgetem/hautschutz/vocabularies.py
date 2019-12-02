@@ -92,3 +92,10 @@ material = SimpleVocabulary((
     SimpleTerm(u"stahl", u"stahl", u"Stahl"),
     SimpleTerm(u"synthetik-leder", u"synthetik-leder", u"Synthetik-Leder")
     ))
+
+symbole_374_alt = [
+    SimpleTerm(u'chemikalien_einfach', u'chemikalien_einfach', u'Eingeschränkter Schutz gegen Chemikalien'),
+    SimpleTerm(u'chemikalien_spez', u'chemikalien_spez', u'Spezifischer Schutz gegen Chemikalien'),
+    SimpleTerm(u'bakt_pilze', u'bakt_pilze', u'Schutz gegen Mikroorganismen (Bakterien und Pilze)'),
+]
+pruefung374alt = SimpleVocabulary(symbole_374_alt)
