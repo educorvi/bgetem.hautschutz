@@ -9,6 +9,7 @@ from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import schmutzVocabulary
+from plone.namedfile.field import NamedBlobImage
 
 from bgetem.hautschutz import _
 
@@ -34,7 +35,7 @@ class IHautreinigungsmittel(model.Schema):
 
     bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
-#    bild = NamedBlobImage(title=u"Produktbild", required=False)
+    bild = NamedBlobImage(title=u"Produktbild", required=False)
 
  #   hersteller = RelationChoice(
  #       title=u"Hersteller oder Lieferant",
