@@ -63,3 +63,9 @@ zusatzVocabulary = SimpleVocabulary.fromItems((
     (u"gegen Hauterweichung", "id_hauterweichung"),
     (u"keine", "keine")
     ))
+
+hskategorieVocabulary = SimpleVocabulary((
+    SimpleTerm(value=u"id_wasserloeslich", token=u"wasserloeslich", title=_(u"gegen wasserlösliche Arbeitsstoffe")),
+    SimpleTerm(value=u"id_nichtwasserloeslich", token=u"nichtwasserloeslich", title=(u"gegen wasserunlösliche Arbeitsstoffe")),
+    SimpleTerm(value=u"id_wechselnd", token=u"wechselnd", title=(u"gegen wechselnde Arbeitsstoffe"))
+    ))
