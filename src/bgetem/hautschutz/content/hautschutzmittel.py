@@ -9,6 +9,7 @@ from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import hautschutzmittelanwendungen, hskategorieVocabulary, zusatzVocabulary
+from plone.namedfile.field import NamedBlobImage
 
 #from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
@@ -33,13 +34,13 @@ class IHautschutzmittel(model.Schema):
 
     inhaltsstoffe = schema.List(title=_(u'Inhaltsstoffe'), value_type=schema.TextLine(), required=False)
 
-    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
+    konservierungsmittel = schema.List(title=_(u"Konservierungsmittel"), value_type=schema.TextLine(), required=False)
 
-#    duftstoffe = schema.List(title=u"Duftstoffe", value_type=schema.TextLine(), required=Falase)
+    duftstoffe = schema.List(title=_(u"Duftstoffe"), value_type=schema.TextLine(), required=False)
 
-    bemerkungen = schema.Text(title=u"Bemerkungen", required=False)
+    bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
-#    bild NamedBlobImage(title=u'Produktbild', required=False)
+    bild = NamedBlobImage(title=_(u'Produktbild'), required=False)
 
 
 @implementer(IHautschutzmittel)
