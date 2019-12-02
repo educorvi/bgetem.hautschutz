@@ -30,11 +30,11 @@ desinf_wirksamkeit = SimpleVocabulary((
     SimpleTerm(value=u'viruzid', token=u'viruzid', title=_(u'Viruswirksamkeit (d.h. begrenzt viruzid oder viruzid gemäß den Anordnungen nach RKI/DVV (2))'))
     ))
 
-einwirkung = [
-    SimpleTerm(u"auswahl", u"auswahl", _(u"bitte auswählen")),
-    SimpleTerm(u"30", u"30", _(u"30")),
-    SimpleTerm(u"60", u"60", _(u"60")),]
-einwirkzeit = SimpleVocabulary(einwirkung)
+einwirkzeit = SimpleVocabulary((
+    SimpleTerm(value=u"auswahl", token=u"auswahl", title=_(u"bitte auswählen")),
+    SimpleTerm(value=u"30", token=u"30", title=_(u"30")),
+    SimpleTerm(value=u"60", token=u"60", title=_(u"60")),
+    ))
 
 desinf_pruefung = SimpleVocabulary((
     SimpleTerm(value=u'vah', token=u'vah', title=_(u'VAH (Verband für Angewandte Hygiene e.V.)')),
