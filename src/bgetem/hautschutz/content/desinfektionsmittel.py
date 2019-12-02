@@ -5,7 +5,11 @@ from zope import schema
 from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import desinf_anwendung, desinf_produktgruppe, desinf_wirksamkeit, einwirkzeit, desinf_pruefung
 from plone.namedfile.field import NamedBlobImage
+
+from z3c.relationfield.schema import RelationChoice
+from plone.app.vocabularies.catalog import CatalogSource
 #from plone.formwidget.contenttree import ObjPathSourceBinder
+
 
 from bgetem.hautschutz import _
 
@@ -53,11 +57,11 @@ class IDesinfektionsmittel(model.Schema):
 
     bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
-#    hersteller = RelationChoice(
-#    title=_(u"Hersteller oder Lieferant"),
-#    source=ObjPathSourceBinder(),
-#    required=False,
-#    )
+    hersteller = RelationChoice(
+    title=_(u"Hersteller oder Lieferant"),
+    source=CatalogSource(portal_type="Document",),
+    required=False,
+    )
 
 
 

@@ -7,21 +7,23 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
+from bgetem.hautschutz.vocabularies import material
+from plone.namedfile.field import NamedBlobImage
 
+from bgetem.hautschutz import _
 
-# from bgetem.hautschutz import _
-
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 class ISchutzhandschuh(model.Schema):
     """ 
     Schema eines Schutzhandschuhs
     """
 
-    title = schema.TextLine(title=u"Produktname")
+    title = schema.TextLine(title=_(u"Produktname"))
 
-    text = RichText(title=u"Weitere Beschreibungen des Produkts", required = False)
+    text = RichText(title=_(u"Weitere Beschreibungen des Produkts"), required = False)
 
-#    bild = NamedBlobImage(title=u"Produktbild", required=False)
+    bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
 #    hersteller = RelationChoice(
 #            title=u"Hersteller oder Lieferant",
@@ -29,8 +31,8 @@ class ISchutzhandschuh(model.Schema):
 #            required=False,
 #            )
 
-#    form.widget(material_aussen=CheckBoxFieldWidget)
-#    material_aussen = schema.List(title=u"Material außen", value_type=schema.Choice(vocabulary=material), required=False,)
+    form.widget(material_aussen=CheckBoxFieldWidget)
+    material_aussen = schema.List(title=_(u"Material außen"), value_type=schema.Choice(vocabulary=material), required=False,)
 
 #    form.widget(material_innen=CheckBoxFieldWidget)
 #    material_innen = schema.List(title=u"Material innen", value_type=schema.Choice(vocabulary=material), required=False)

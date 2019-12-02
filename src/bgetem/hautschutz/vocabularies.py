@@ -69,3 +69,26 @@ hskategorieVocabulary = SimpleVocabulary((
     SimpleTerm(value=u"id_nichtwasserloeslich", token=u"nichtwasserloeslich", title=(u"gegen wasserunlösliche Arbeitsstoffe")),
     SimpleTerm(value=u"id_wechselnd", token=u"wechselnd", title=(u"gegen wechselnde Arbeitsstoffe"))
     ))
+
+material = SimpleVocabulary((
+    SimpleTerm(u"baumwolle", u"baumwolle", u"Baumwolle"),
+    SimpleTerm(u"bambus-viskose", u"bambus-viskose", u"Bambus-Viskose"),
+    SimpleTerm(u"butylkautschuk", u"butylkautschuk", u"Butylkautschuk (Butyl, IR)"),
+    SimpleTerm(u"dyneema", u"dyneema", u"Dyneema"),
+    SimpleTerm(u"fluorkautschuk", u"fluorkautschuk", u"Fluorkautschuk (Viton, FKM)"),
+    SimpleTerm(u"glasfaser", u"glasfaser", u"Glasfaser"),
+    SimpleTerm(u"kevlar", u"kevlar", u"Kevlar"),
+    SimpleTerm(u"naturkautschuk", u"naturkautschuk", u"Naturkautschuk (Latex, NR)"),
+    SimpleTerm(u"nitrilkautschuk", u"nitrilkautschuk", u"Nitrilkautschuk (Nitril, NBR)"),
+    SimpleTerm(u"nylon", u"nylon", u"Nylon"),
+    SimpleTerm(u"para-aramid", u"para-aramid", u"Para-Aramid"),
+    SimpleTerm(u"polyamid", u"polyamid", u"Polyamid"),
+    SimpleTerm(u"polychloropren", u"polychloropren", u"Polychloropren (Neopren, CR)"),
+    SimpleTerm(u"polyester", u"polyester", u"Polyester"),
+    SimpleTerm(u"polyurethan", u"polyurethan", u"Polyurethan (PU)"),
+    SimpleTerm(u"polyvinylalkohol", u"polyvinylalkohol", u"Polyvinylalkohol (PVA)"),
+    SimpleTerm(u"polyvinylchlorid", u"polyvinylchlorid", u"Polyvinylchlorid (Vinyl, PVC)"),
+    SimpleTerm(u"spectra", u"spectra", u"Spectra"),
+    SimpleTerm(u"stahl", u"stahl", u"Stahl"),
+    SimpleTerm(u"synthetik-leder", u"synthetik-leder", u"Synthetik-Leder")
+    ))
