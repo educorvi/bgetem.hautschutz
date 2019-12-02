@@ -22,17 +22,17 @@ class IHautreinigungsmittel(model.Schema):
 
     anwendungsbereich = schema.List(title=_(u"Anwendungsbereich"), value_type=schema.Choice(vocabulary=schmutzVocabulary), required=False,)
 
-    inhaltsstoffe = schema.List(title=u"Inhaltsstoffe", value_type=schema.TextLine(), required=False)
+    inhaltsstoffe = schema.List(title=_(u"Inhaltsstoffe"), value_type=schema.TextLine(), required=False)
 
-    reibemittel = schema.List(title=u"Reibemittel", value_type=schema.TextLine(), required=False)
+    reibemittel = schema.List(title=_(u"Reibemittel"), value_type=schema.TextLine(), required=False)
 
-    loesemittel = schema.List(title=u"Lösemittel", value_type=schema.TextLine(), required=False)
+    loesemittel = schema.List(title=_(u"Lösemittel"), value_type=schema.TextLine(), required=False)
 
-    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
+    konservierungsmittel = schema.List(title=_(u"Konservierungsmittel"), value_type=schema.TextLine(), required=False)
 
-    duftstoffe = schema.List(title=u"Duftstoffe", value_type=schema.TextLine(), required=False)
+    duftstoffe = schema.List(title=_(u"Duftstoffe"), value_type=schema.TextLine(), required=False)
 
-    bemerkungen = schema.Text(title=u"Bemerkungen", required=False)
+    bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
 #    bild = NamedBlobImage(title=u"Produktbild", required=False)
 
