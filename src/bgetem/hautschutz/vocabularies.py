@@ -40,3 +40,8 @@ desinf_pruefung = SimpleVocabulary((
     SimpleTerm(value=u'vah', token=u'vah', title=_(u'VAH (Verband für Angewandte Hygiene e.V.)')),
     SimpleTerm(value=u'rki', token=u'rki', title=_(u'RKI (Robert Koch Institut)')),
     ))
+
+anwendungVocabulary = SimpleVocabulary((
+    SimpleTerm(u"id_normal", u"id_normal", u"normal belastete Haut"),
+    SimpleTerm(u"id_stark", u"id_stark", u"stark belastete Haut"),
+    ))
