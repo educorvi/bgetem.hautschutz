@@ -42,6 +42,12 @@ desinf_pruefung = SimpleVocabulary((
     ))
 
 anwendungVocabulary = SimpleVocabulary((
-    SimpleTerm(u"id_normal", u"id_normal", u"normal belastete Haut"),
-    SimpleTerm(u"id_stark", u"id_stark", u"stark belastete Haut"),
+    SimpleTerm(value=u"id_normal", token=u"id_normal", title=_(u"normal belastete Haut")),
+    SimpleTerm(value=u"id_stark", token=u"id_stark", title=_(u"stark belastete Haut")),
+    ))
+
+schmutzVocabulary = SimpleVocabulary((
+    SimpleTerm(value=u"id_leicht", token=u"id_leicht", title=_(u"leichte Verschmutzung")),
+    SimpleTerm(value=u"id_normal", token=u"id_normal", title=_(u"normale Verschmutzung")),
+    SimpleTerm(value=u"id_grob", token=u"id_grob", title=_(u"grobe Verschmutzung"))
     ))
