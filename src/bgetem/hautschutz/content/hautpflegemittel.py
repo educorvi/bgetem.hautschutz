@@ -11,8 +11,10 @@ from zope.interface import implementer
 from plone.namedfile.field import NamedBlobImage
 from bgetem.hautschutz.vocabularies import anwendungVocabulary
 
-from bgetem.hautschutz import _
+from z3c.relationfield.schema import RelationChoice
+from plone.app.vocabularies.catalog import CatalogSource
 
+from bgetem.hautschutz import _
 
 class IHautpflegemittel(model.Schema):
     """ Marker interface and Dexterity Python Schema for Hautpflegemittel
@@ -24,19 +26,19 @@ class IHautpflegemittel(model.Schema):
 
     inhaltsstoffe = schema.List(title=_(u"Inhaltsstoffe"), value_type=schema.TextLine(), required=False)
 
-    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
+    konservierungsmittel = schema.List(title=_(u"Konservierungsmittel"), value_type=schema.TextLine(), required=False)
 
-    duftstoffe = schema.List(title=u"Duftstoffe", value_type=schema.TextLine(), required=False)
+    duftstoffe = schema.List(title=_(u"Duftstoffe"), value_type=schema.TextLine(), required=False)
 
-    bemerkungen = schema.Text(title=u"Bemerkungen", required=False)
+    bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
-    bild = NamedBlobImage(title=u"Produktbild", required=False)
+    bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
-#    hersteller = RelationChoice(
-#        title=u"Hersteller oder Lieferant",
-#        source=ObjPathSourceBinder(),
-#        required=False,
-#        )
+    hersteller = RelationChoice(
+        title=_(u"Hersteller oder Lieferant"),
+        source=CatalogSource(portal_type="Document",),
+        required=False,
+        )
 
 
 @implementer(IHautpflegemittel)

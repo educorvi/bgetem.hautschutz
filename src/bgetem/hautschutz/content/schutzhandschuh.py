@@ -10,6 +10,9 @@ from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import material
 from plone.namedfile.field import NamedBlobImage
 
+from z3c.relationfield.schema import RelationChoice
+from plone.app.vocabularies.catalog import CatalogSource
+
 from bgetem.hautschutz import _
 
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
@@ -25,14 +28,14 @@ class ISchutzhandschuh(model.Schema):
 
     bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
-#    hersteller = RelationChoice(
-#            title=u"Hersteller oder Lieferant",
-#            source=ObjPathSourceBinder(),
-#            required=False,
-#            )
+    hersteller = RelationChoice(
+            title=u"Hersteller oder Lieferant",
+            source=CatalogSource(portal_type="Document",),
+            required=False,
+            )
 
-    form.widget(material_aussen=CheckBoxFieldWidget)
-    material_aussen = schema.List(title=_(u"Material außen"), value_type=schema.Choice(vocabulary=material), required=False,)
+#    form.widget(material_aussen=CheckBoxFieldWidget)
+#    material_aussen = schema.List(title=_(u"Material außen"), value_type=schema.Choice(vocabulary=material), required=False,)
 
 #    form.widget(material_innen=CheckBoxFieldWidget)
 #    material_innen = schema.List(title=u"Material innen", value_type=schema.Choice(vocabulary=material), required=False)

@@ -11,8 +11,6 @@ from zope.interface import implementer
 from bgetem.hautschutz.vocabularies import hautschutzmittelanwendungen, hskategorieVocabulary, zusatzVocabulary
 from plone.namedfile.field import NamedBlobImage
 
-#from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-
 from bgetem.hautschutz import _
 
 class IHautschutzmittel(model.Schema):
