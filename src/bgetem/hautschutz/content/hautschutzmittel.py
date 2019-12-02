@@ -31,9 +31,9 @@ class IHautschutzmittel(model.Schema):
 
     zusatzfunktion = schema.Choice(title=_(u'Zusatzfunktion'), vocabulary=zusatzVocabulary, default="keine", required=False)
 
-#    inhaltsstoffe = schema.List(title=u'Inhaltsstoffe', value_type=schema.TextLine(), required=False)
+    inhaltsstoffe = schema.List(title=_(u'Inhaltsstoffe'), value_type=schema.TextLine(), required=False)
 
-#    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
+    konservierungsmittel = schema.List(title=u"Konservierungsmittel", value_type=schema.TextLine(), required=False)
 
 #    duftstoffe = schema.List(title=u"Duftstoffe", value_type=schema.TextLine(), required=Falase)
 
