@@ -58,3 +58,8 @@ hautschutzmittelanwendungen = SimpleVocabulary((
     SimpleTerm(value=u"id_rauche", token=u"id_rauche", title=_(u"Schweissrauche")),
     SimpleTerm(value=u"id_uvstrahlen", token=u"id_uvstrahlen", title=_(u"UV-Strahlen")),
     ))
+
+zusatzVocabulary = SimpleVocabulary.fromItems((
+    (u"gegen Hauterweichung", "id_hauterweichung"),
+    (u"keine", "keine")
+    ))

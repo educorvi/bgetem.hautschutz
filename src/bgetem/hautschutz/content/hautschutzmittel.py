@@ -19,9 +19,9 @@ class IHautschutzmittel(model.Schema):
     Schema eines Hautschutzmittels
     """
     
-    title = schema.TextLine(title=u"Produktname")
+    title = schema.TextLine(title=_(u"Produktname"))
 
-#    gefaehrdung = schema.List(title=u'Gefährdung', value_type=schema.Choice(vocabulary=anwendungVocabulary, required=False), required=False)
+    gefaehrdung = schema.List(title=_(u'Gefährdung'), value_type=schema.Choice(vocabulary=hautschutzmittelanwendungen, required=False), required=False)
 
     uvschutzfaktor = schema.TextLine(title=u'Sonnenschutzfaktor', required=False)
 
