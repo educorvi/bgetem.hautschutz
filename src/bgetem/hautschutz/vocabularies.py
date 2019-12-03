@@ -99,3 +99,65 @@ symbole_374_alt = [
     SimpleTerm(u'bakt_pilze', u'bakt_pilze', u'Schutz gegen Mikroorganismen (Bakterien und Pilze)'),
 ]
 pruefung374alt = SimpleVocabulary(symbole_374_alt)
+
+profilierung = SimpleVocabulary ((
+    SimpleTerm(u"Fingerspitzen Diamantprofil", u"Fingerspitzen Diamantprofil", u"Fingerspitzen Diamantprofil"),
+    SimpleTerm(u"Fingerspitzen genoppt", u"Fingerspitzen genoppt", u"Fingerspitzen genoppt"),
+    SimpleTerm(u"Fingerspitzen geraut", u"Fingerspitzen geraut", u"Fingerspitzen geraut"),
+    SimpleTerm(u"Fingerspitzen glatt", u"Fingerspitzen glatt", u"Fingerspitzen glatt"),
+    SimpleTerm(u"Fingerspitzen mit Profil", u"Fingerspitzen mit Profil", u"Fingerspitzen mit Profil"),
+    SimpleTerm(u"Fingerspitzen Rautenprofil", u"Fingerspitzen Rautenprofil", u"Fingerspitzen Rautenprofil"),
+    SimpleTerm(u"Handfleache Diamantprofil", u"Handfleache Diamantprofil", u"Handfläche Diamantprofil"),
+    SimpleTerm(u"Handflaeche genoppt", u"Handflaeche genoppt", u"Handfläche genoppt"),
+    SimpleTerm(u"Handflaeche geraut", u"Handflaeche geraut", u"Handfläche geraut"),
+    SimpleTerm(u"Handflaeche glatt", u"Handflaeche glatt", u"Handfläche glatt"),
+    SimpleTerm(u"Handflaeche mit Profil", u"Handflaeche mit Profil", u"Handfläche mit Profil"),
+    SimpleTerm(u"Handflaeche Rautenprofil", u"Handflaeche Rautenprofil", u"Handfläche Rautenprofil")
+    ))
+
+cecatvalues = SimpleVocabulary((
+    SimpleTerm(u"auswahl", u"auswahl", u"bitte auswählen"),
+    SimpleTerm(1, 1, u'I'),
+    SimpleTerm(2, 2, u'II'),
+    SimpleTerm(3, 3, u'III'),
+    ))
+
+allergene_vocab = SimpleVocabulary((
+    SimpleTerm(u'Thiurame', u'Thiurame', u'Thiurame'),
+    SimpleTerm(u'TMTM', u'TMTM', u'Tetramethylthiurammonosulfid (TMTM)'),
+    SimpleTerm(u'TMTD', u'TMTD', u'Tetramethylthiuramdisulfid (TMTD)'),
+    SimpleTerm(u'TETD', u'TETD', u'Tetraethylthiuramdisulfid (TETD)'),
+    SimpleTerm(u'DPTD', u'DPTD', u'Dipentamethylthiuramdisulfid (DPTD)'),
+    SimpleTerm(u'Dithiocarbamate', u'Dithiocarbamate', u'Dithiocarbamate'),
+    SimpleTerm(u'ZDMC', u'ZDMC', u'Zinkdimethyldithiocarbamat (Ziram, ZDMC)'),
+    SimpleTerm(u'ZDEC', u'ZDEC', u'Zinkdiethyldithiocarbamat (ZDC, ZDEC)'),
+    SimpleTerm(u'ZDBC', u'ZDBC', u'Zinkdibutyldithiocarbamat (ZBC, ZDBC)'),
+    SimpleTerm(u'ZEPC', u'ZEPC', u'Zinkethylphenyldithiocarbamat (ZEPC)'),
+    SimpleTerm(u'ZPD', u'ZPD', u'Zinkpentamethylendithiocarbamat (ZPD)'),
+    SimpleTerm(u'NBC', u'NBC', u'Natriumdibutyldithiocarbamat (NBC)'),
+    SimpleTerm(u'NHEC', u'NHEC', u'Natriumcyclohexylethyldithiocarbamat (NHEC)'),
+    SimpleTerm(u'Zinkdibenzyldithiocarbama', u'Zinkdibenzyldithiocarbama', u'Zinkdibenzyldithiocarbama'),
+    SimpleTerm(u'Thioharnstoffe', u'Thioharnstoffe', u'Thioharnstoffe'),
+    SimpleTerm(u'DBTU', u'DBTU', u'Dibutylthioharnstoff (DBTU)'),
+    SimpleTerm(u'DETU', u'DETU', u'Diethylthioharnstoff (DETU)'),
+    SimpleTerm(u'DPTU', u'DPTU', u'Diphenylthioharnstoff (DPTU)'),
+    SimpleTerm(u'ETU', u'ETU', u"N,N'-Ethylenthioharnstoff (ETU)"),
+    SimpleTerm(u'Mercaptobenzothiazol', u'Mercaptobenzothiazol', u'Mercaptobenzothiazol'),
+    SimpleTerm(u'MBT', u'MBT', u'Mercaptobenzothiazol (MBT)'),
+    SimpleTerm(u'ZMBT', u'ZMBT', u'Zinkmercaptobenzothiazol (ZMBT)'),
+    SimpleTerm(u'MBS', u'MBS', u'Morpholinylmercaptobenzothiazol (MOR, MBS)'),
+    SimpleTerm(u'MBTS', u'MBTS', u'Dibenzothiazyldisulfid (MBTS)',),
+    SimpleTerm(u'DEBS', u'DEBS', u'Diethylbenzothiazolsulfenamid (DEBS)'),
+    SimpleTerm(u'CBS', u'CBS', u'N-Cyclohexyl-2-benzothiazylsulfenamid (CBS)'),
+    SimpleTerm(u'DCBS', u'DCBS', u'Dicyclohexylbenzothiazolsufenamid (DCBS)'),
+    SimpleTerm(u'p-Phenylendiamin-Derivate', u'p-Phenylendiamin-Derivate' u'p-Phenylendiamin-Derivate'),
+    SimpleTerm(u'IPPD', u'IPPD', u"N-Isopropyl-N'-phenyl-p-phenylendiamin (IPPD)"),
+    SimpleTerm(u'DPPD', u'DPPD', u"N,N'-Diphenyl-p-phenylendiamin (DPPD)"),
+    SimpleTerm(u'Mercaptobenzimidazol', u'Mercaptobenzimidazol', u'Mercaptobenzimidazol'),
+    SimpleTerm(u'1,3-Diphenylguanidin', u'1,3-Diphenylguanidin', u'1,3-Diphenylguanidin'),
+    SimpleTerm(u'Hydrochinon', u'Hydrochinon', u'Hydrochinon'),
+    SimpleTerm(u'Hexamethylentetramin', u'Hexamethylentetramin', u'Hexamethylentetramin'),
+    SimpleTerm(u'HN-Cyclohexylthiophthalimid', u'HN-Cyclohexylthiophthalimid', u'HN-Cyclohexylthiophthalimid'),
+    SimpleTerm(u'Naturlatex', u'Naturlatex', u'Naturlatex'),
+    SimpleTerm(u'Maisstaerke', u'Maisstaerke', u'Maisstärke'),
+    ))

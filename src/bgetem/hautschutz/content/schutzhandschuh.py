@@ -7,7 +7,7 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import material, pruefung374alt
+from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab
 from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
@@ -32,29 +32,29 @@ class ISchutzhandschuh(model.Schema):
     bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
     hersteller = RelationChoice(
-            title=u"Hersteller oder Lieferant",
+            title=_(u"Hersteller oder Lieferant"),
             source=CatalogSource(portal_type="Document",),
             required=False,
             )
 
-#    form.widget(material_aussen=CheckBoxFieldWidget)
-#    material_aussen = schema.List(title=_(u"Material außen"), value_type=schema.Choice(vocabulary=material), required=False,)
+    directives.widget('material_aussen', CheckBoxFieldWidget)
+    material_aussen = schema.List(title=_(u"Material außen"), value_type=schema.Choice(vocabulary=material), required=False,)
 
-#    form.widget(material_innen=CheckBoxFieldWidget)
-#    material_innen = schema.List(title=u"Material innen", value_type=schema.Choice(vocabulary=material), required=False)
+    directives.widget('material_innen', CheckBoxFieldWidget)
+    material_innen = schema.List(title=_(u"Material innen"), value_type=schema.Choice(vocabulary=material), required=False)
 
-#    form.widget(profilierung=CheckBoxFieldWidget)
-#    profilierung = schema.List(tiel=u"Profilierung", value_type=schema.Choice(vocabulary=profilierung), required=False)
+    directives.widget('profilierung', CheckBoxFieldWidget)
+    profilierung = schema.List(title=_(u"Profilierung"), value_type=schema.Choice(vocabulary=profilierung), required=False)
 
-    schichtstaerke_min = schema.Float(title=u"Schichtstärke (min) in mm", required=False)
-    schichtstaerke_max = schema.Float(title=u"Schichtstärke (max) in mm", required=False)
+    schichtstaerke_min = schema.Float(title=_(u"Schichtstärke (min) in mm"), required=False)
+    schichtstaerke_max = schema.Float(title=_(u"Schichtstärke (max) in mm"), required=False)
 
-    gesamtlaenge_von = schema.Int(title=u"Gesamtlänge (von) in mm", required=False)
-    gesamtlaenge_bis = schema.Int(title=u"Gesamtlänge (bis) in mm", required=False)
+    gesamtlaenge_von = schema.Int(title=_(u"Gesamtlänge (von) in mm"), required=False)
+    gesamtlaenge_bis = schema.Int(title=_(u"Gesamtlänge (bis) in mm"), required=False)
 
-#    cecategory = schema.Choice(title=u"CE-Kategorie", vocabulary=cecatcalues)
+    cecategory = schema.Choice(title=_(u"CE-Kategorie"), vocabulary=cecatvalues)
 
-#    allergene = schema.List(title=u"Allergene", value_type=schema.Choice(vocabulary=allergene_vocab), required=False)
+    allergene = schema.List(title=_(u"Allergene"), value_type=schema.Choice(vocabulary=allergene_vocab), required=False)
 
     model.fieldset(
         'chemie',
