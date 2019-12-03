@@ -205,3 +205,38 @@ pruefung_normen_mechanik = SimpleVocabulary((
     SimpleTerm(u'din_en_388_alt', u'din_en_388_alt', u'DIN EN 388 vor 2016'),
     SimpleTerm(u'din_en_388_2016', u'din_en_388_2016', u"EN 388:2016"),
     ))
+
+catvalue1 = SimpleVocabulary.fromItems((
+    ("x", "x"),
+    ("0", "0"),
+    ("1", "1"),
+    ("2", "2"),
+    ("3", "3"),
+    ("4", "4")))
+
+catvalue2 = SimpleVocabulary.fromItems((
+    ("x", "x"),
+    ("0", "0"),
+    ("1", "1"),
+    ("2", "2"),
+    ("3", "3"),
+    ("4", "4"),
+    ("5", "5")))
+
+catvalue3 = SimpleVocabulary.fromItems((
+    ("x", "x"),
+    ("A", "A"),
+    ("B", "B"),
+    ("C", "C"),
+    ("D", "D"),
+    ("E", "E"),
+    ("F", "F")))
+
+catvalue4 = SimpleVocabulary.fromItems((
+    ("x", "x"),
+    ("P", "P")))
+
+catvalue5 = SimpleVocabulary.fromItems((
+    ("x", "x"),
+    ("0", "0"),
+    ("1", "1")))

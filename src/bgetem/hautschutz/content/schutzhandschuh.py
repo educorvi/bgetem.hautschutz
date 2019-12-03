@@ -6,6 +6,8 @@ from zope import schema
 from zope.interface import implementer
 
 from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung, pruefung375_5_2016, pruefung_weitere_chemie, pruefung_normen_mechanik
+
+from bgetem.hautschutz.vocabularies import catvalue1, catvalue2, catvalue3, catvalue4, catvalue5
 from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
@@ -75,7 +77,7 @@ class ISchutzhandschuh(model.Schema):
                                  default='keine',
                                  required=False)
 
-    directives.widget('chemikalienliste', CheckBoxFieldWidget)
+#    directives.widget('chemikalienliste', CheckBoxFieldWidget)
     chemikalienliste = schema.List(title=_(u"Liste der Prüfchemikalien"),
                                     description=_(u"Bitte wählen Sie aus, welche Chemikalien bei der Permeationsprüfung verwendet wurden."),
                                     value_type=schema.Choice(vocabulary=chemikalienpruefung),
@@ -103,8 +105,7 @@ class ISchutzhandschuh(model.Schema):
     model.fieldset(
         'mechanik',
         label=u"Mechanische Risiken",
-#        fields=['mechanik', 'abrieb', 'schnittcoup', 'riss', 'stick', 'schnittiso', 'stoss']
-        fields=['mechanik']
+        fields=['mechanik', 'abrieb', 'schnittcoup', 'riss', 'stick', 'schnittiso', 'stoss']
     )
 
     directives.widget('mechanik', CheckBoxFieldWidget)
@@ -113,40 +114,36 @@ class ISchutzhandschuh(model.Schema):
                            value_type=schema.Choice(vocabulary=pruefung_normen_mechanik),
                            required=False)
 
-#    abrieb = schema.Choice(title=u"Abriebfestigkeit", vocabulary=catvalue1, required=False)
-#    schnittcoup = schema.Choice(title=u"Schnittfestigkeit (Coup-Test)", vocabulary=catvalue2, required=False)
-#    riss = schema.Choice(title=u"Weiterreißfestigkeit", vocabulary=catvalue1, required=False)
-#    stick = schema.Choice(title=u"Durchstichfestigkeit", vocabulary=catvalue1, required=False)
-#    schnittiso = schema.Choice(title=u"Schnittfestigkeit (ISO)", vocabulary=catvalue3, required=False)
-#    stoss = schema.Choice(title=u"Schutz gegen Stosseinwirkung", vocabulary=catvalue4, required=False)
+    abrieb = schema.Choice(title=u"Abriebfestigkeit", vocabulary=catvalue1, required=False)
+    schnittcoup = schema.Choice(title=u"Schnittfestigkeit (Coup-Test)", vocabulary=catvalue2, required=False)
+    riss = schema.Choice(title=u"Weiterreißfestigkeit", vocabulary=catvalue1, required=False)
+    stick = schema.Choice(title=u"Durchstichfestigkeit", vocabulary=catvalue1, required=False)
+    schnittiso = schema.Choice(title=u"Schnittfestigkeit (ISO)", vocabulary=catvalue3, required=False)
+    stoss = schema.Choice(title=u"Schutz gegen Stosseinwirkung", vocabulary=catvalue4, required=False)
 
     model.fieldset(
         'waerme_kaelte',
         label=u"Wärme / Kälte",
-#        fields = ['en407', 'brennverhalten', 'kontaktwaerme', 'konvektive_hitze', 'strahlungswaerme',
-#                  'metallspritzer','fluessigesmetall', 'en511', 'konvektive_kaelte', 'kontaktkaelte',
-#                  'wasserdichtigkeit'],
-        fields = ['en407', 'en511']
+        fields = ['en407', 'brennverhalten', 'kontaktwaerme', 'konvektive_hitze', 'strahlungswaerme',
+                  'metallspritzer','fluessigesmetall', 'en511', 'konvektive_kaelte', 'kontaktkaelte',
+                  'wasserdichtigkeit'],
     )
 
     en407 = schema.Bool(title=_(u"Norm 407"),
                       description=_(u"Erfüllt der Schutzhandschuh die Norm 407 bzw. wurde er dagegen getestet?"),)
-
-#    brennverhalten = schema.Choice(title=u"Brennverhalten", vocabulary=catvalue1, required=False)
-#    kontaktwaerme = schema.Choice(title=u"Kontaktwärme", vocabulary=catvalue1, required=False)
-#    konvektive_hitze = schema.Choice(title=u"Konvektive Hitze", vocabulary=catvalue1, required=False)
-#    strahlungswaerme = schema.Choice(title=u"Strahlungswärme", vocabulary=catvalue1, required=False)
-#    metallspritzer = schema.Choice(title=u"Belastung durch kleine Spritzer geschmolzenen Metalls",
-#                               vocabulary=catvalue1, required=False)
-#    fluessigesmetall = schema.Choice(title=u"Belastung durch große Mengen flüssigen Metalls",
-#                          vocabulary=catvalue1, required=False)
-
+    brennverhalten = schema.Choice(title=u"Brennverhalten", vocabulary=catvalue1, required=False)
+    kontaktwaerme = schema.Choice(title=u"Kontaktwärme", vocabulary=catvalue1, required=False)
+    konvektive_hitze = schema.Choice(title=u"Konvektive Hitze", vocabulary=catvalue1, required=False)
+    strahlungswaerme = schema.Choice(title=u"Strahlungswärme", vocabulary=catvalue1, required=False)
+    metallspritzer = schema.Choice(title=u"Belastung durch kleine Spritzer geschmolzenen Metalls",
+                               vocabulary=catvalue1, required=False)
+    fluessigesmetall = schema.Choice(title=u"Belastung durch große Mengen flüssigen Metalls",
+                          vocabulary=catvalue1, required=False)
     en511 = schema.Bool(title=_(u"Norm 511"),
                         description=_(u"Erfüllt der Schutzhandschuh die Norm 511 bzw. wurde er dagegen getestet?"),)
-
-#    konvektive_kaelte = schema.Choice(title=u"Konvektive Kälte", vocabulary=catvalue1, required=False)
-#    kontaktkaelte = schema.Choice(title=u"Kontaktkälte", vocabulary=catvalue1, required=False)
-#    wasserdichtigkeit = schema.Choice(title=u"Wasserdichtigkeit", vocabulary=catvalue5, required=False)
+    konvektive_kaelte = schema.Choice(title=u"Konvektive Kälte", vocabulary=catvalue1, required=False)
+    kontaktkaelte = schema.Choice(title=u"Kontaktkälte", vocabulary=catvalue1, required=False)
+    wasserdichtigkeit = schema.Choice(title=u"Wasserdichtigkeit", vocabulary=catvalue5, required=False)
 
     model.fieldset(
         'elektro',
