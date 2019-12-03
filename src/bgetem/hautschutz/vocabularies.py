@@ -161,3 +161,31 @@ allergene_vocab = SimpleVocabulary((
     SimpleTerm(u'Naturlatex', u'Naturlatex', u'Naturlatex'),
     SimpleTerm(u'Maisstaerke', u'Maisstaerke', u'Maisstärke'),
     ))
+
+pruefung374neu = SimpleVocabulary((
+    SimpleTerm(u'keine', u'keine', u'keine Prüfung'),
+    SimpleTerm(u'TypA', u'TypA', u'EN ISO 374-1 / Typ A (6 Prüfchemikalien)'),
+    SimpleTerm(u'TypB', u'TypB', u'EN ISO 374-1 / Typ B (3 Prüfchemikalien)'),
+    SimpleTerm(u'TypC', u'TypC', u'EN ISO 374-1 / Typ C (1 Prüfchemikalie)'),
+    ))
+
+chemikalienpruefung = SimpleVocabulary((
+    SimpleTerm(u'67-56-1', u'A', u'(A) Methanol'),
+    SimpleTerm(u'67-64-1', u'B', u'(B) Aceton'),
+    SimpleTerm(u'75-05-8', u'C', u'(C) Acetonitril'),
+    SimpleTerm(u'75-09-2', u'D', u'(D) Dichlormethan'),
+    SimpleTerm(u'75-15-0', u'E', u'(E) Schwefelkohlenstoff (Kohlenstoffdisulfid)'),
+    SimpleTerm(u'108-88-3', u'F', u'(F) Tuluol'),
+    SimpleTerm(u'109-89-7', u'G', u'(G) Diethylamin'),
+    SimpleTerm(u'109-99-9', u'H', u'(H) Tetrahydrofuran'),
+    SimpleTerm(u'141-78-6', u'I', u'(I) Essigsäureethylester (Ethylacetat)'),
+    SimpleTerm(u'142-82-5', u'J', u'(J) n-Heptan'),
+    SimpleTerm(u'1310-73-2', u'K', u'(K) Natriumhydroxid 40 %'),
+    SimpleTerm(u'7664-93-9', u'L', u'(L) Schwefelsäure 96 %'),
+    SimpleTerm(u'7697-37-2', u'M', u'(M) Salpetersäure 65 %'),
+    SimpleTerm(u'64-19-7', u'N', u'(N) Essigsäure 99 %'),
+    SimpleTerm(u'1336-21-6', u'O', u'(O) Ammoniak 25 %'),
+    SimpleTerm(u'7722-84-1', u'P', u'(P) Wasserstoffperoxid 30%'),
+    SimpleTerm(u'7664-39-3', u'S', u'(S) Flusssäure 40 %'),
+    SimpleTerm(u'50-00-0', u'T', u'(T) Formaldehyd 37 %'),
+    ))

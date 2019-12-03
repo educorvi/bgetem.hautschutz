@@ -7,7 +7,7 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab
+from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung
 from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
@@ -60,26 +60,25 @@ class ISchutzhandschuh(model.Schema):
         'chemie',
         label=u"Chemische/Biologische Risiken",
         #fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
-        fields=['norm374_2003']
+        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste']
     )
 
     directives.widget('norm374_2003', CheckBoxFieldWidget)
-    norm374_2003 = schema.List(title=u"Norm EN 374-1:2003 (3 Prüfchemikalien)",
+    norm374_2003 = schema.List(title=_(u"Norm EN 374-1:2003 (3 Prüfchemikalien)"),
                                value_type=schema.Choice(vocabulary=pruefung374alt),
                                required=False)
 
-#    directives.widget('norm374_2016', RadioFieldWidget)
-#    norm374_2016 = schema.Choice(title=u"Norm EN ISO 374-1:2016",
-#                                 vocabulary=pruefung374neu,
-#                                 default='keine',
-#                                 required=False)
+    directives.widget('norm374_2016', RadioFieldWidget)
+    norm374_2016 = schema.Choice(title=_(u"Norm EN ISO 374-1:2016"),
+                                 vocabulary=pruefung374neu,
+                                 default='keine',
+                                 required=False)
 
-#    form.widget(chemikalienliste=CheckBoxFieldWidget)
-#    chemikalienliste = schema.List(title=u"Liste der Prüfchemikalien",
-#                                    description=u"Bitte wählen Sie aus, welche Chemikalien bei der Permeationsprüfung\
-#                                                  verwendet wurden.",
-#                                    value_type=schema.Choice(vocabulary=chemikalienpruefung),
-#                                    required=False)
+    directives.widget('chemikalienliste', CheckBoxFieldWidget)
+    chemikalienliste = schema.List(title=_(u"Liste der Prüfchemikalien"),
+                                    description=_(u"Bitte wählen Sie aus, welche Chemikalien bei der Permeationsprüfung verwendet wurden."),
+                                    value_type=schema.Choice(vocabulary=chemikalienpruefung),
+                                    required=False)
 
 #    form.widget(norm374_5=RadioFieldWidget)
 #    norm374_5 = schema.Choice(title=u"Norm EN ISO 374-5:2016",
