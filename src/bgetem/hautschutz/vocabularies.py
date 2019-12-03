@@ -189,3 +189,9 @@ chemikalienpruefung = SimpleVocabulary((
     SimpleTerm(u'7664-39-3', u'S', u'(S) Flusssäure 40 %'),
     SimpleTerm(u'50-00-0', u'T', u'(T) Formaldehyd 37 %'),
     ))
+
+pruefung375_5_2016 = SimpleVocabulary((
+    SimpleTerm(u'keine', u'keine', u'keine Prüfung'),
+    SimpleTerm(u'bakterienpilze', u'bakterienpilze', u'Schutz vor Bakterien und Pilzen'),
+    SimpleTerm(u'bakterienpilzeviren', u'bakterienpilzeviren', u'Schutz vor Bakterien, Pilzen und Viren')
+    ))

@@ -7,7 +7,7 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung
+from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung, pruefung375_5_2016
 from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
@@ -60,7 +60,7 @@ class ISchutzhandschuh(model.Schema):
         'chemie',
         label=u"Chemische/Biologische Risiken",
         #fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
-        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste']
+        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5']
     )
 
     directives.widget('norm374_2003', CheckBoxFieldWidget)
@@ -80,12 +80,12 @@ class ISchutzhandschuh(model.Schema):
                                     value_type=schema.Choice(vocabulary=chemikalienpruefung),
                                     required=False)
 
-#    form.widget(norm374_5=RadioFieldWidget)
-#    norm374_5 = schema.Choice(title=u"Norm EN ISO 374-5:2016",
-#                              description=u"Schutz gegen Mikroorganismen",
-#                              vocabulary=pruefung375_5_2016,
-#                              default='keine',
-#                              required=False)
+    directives.widget('norm374_5', RadioFieldWidget)
+    norm374_5 = schema.Choice(title=_(u"Norm EN ISO 374-5:2016"),
+                              description=_(u"Schutz gegen Mikroorganismen"),
+                              vocabulary=pruefung375_5_2016,
+                              default='keine',
+                              required=False)
 
 #    form.widget(chemie_weitere=CheckBoxFieldWidget)
 #    chemie_weitere = schema.List(title=u"Prüfung gegen weitere Normen",
