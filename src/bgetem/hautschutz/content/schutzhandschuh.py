@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 from plone.app.textfield import RichText
-# from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.supermodel import model
-# from plone.supermodel.directives import fieldset
-# from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
+
 from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung, pruefung375_5_2016, pruefung_weitere_chemie, pruefung_normen_mechanik
 from plone.namedfile.field import NamedBlobImage
 
@@ -19,6 +17,9 @@ from plone.autoform import directives #as form
 
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.browser.radio import RadioFieldWidget
+
+#from collective.z3cform.datagridfield import DataGridFieldFactory
+#from collective.z3cform.datagridfield import DictRow
 
 class ISchutzhandschuh(model.Schema):
     """ 
@@ -95,8 +96,8 @@ class ISchutzhandschuh(model.Schema):
 
 #    directives.widget('gefahrstoffschutz', DataGridFieldFactory)
 #    form.omitted(IEditForm, 'gefahrstoffschutz')
-#    gefahrstoffschutz = schema.List(title = u'Gefahrstoffschutz für dieses Produkt.',
-#                        value_type=DictRow(title=u"Gefahrstoff", schema=IGefahrstoffe),
+#    gefahrstoffschutz = schema.List(title=_(u'Gefahrstoffschutz für dieses Produkt.'),
+#                        value_type=DictRow(title=_(u"Gefahrstoff"), schema=IGefahrstoffe),
 #                        required = False,)
 
     model.fieldset(
@@ -119,16 +120,17 @@ class ISchutzhandschuh(model.Schema):
 #    schnittiso = schema.Choice(title=u"Schnittfestigkeit (ISO)", vocabulary=catvalue3, required=False)
 #    stoss = schema.Choice(title=u"Schutz gegen Stosseinwirkung", vocabulary=catvalue4, required=False)
 
-#    m1.fieldset(
-#        'waerme_kaelte',
-#        label=u"Wärme / Kälte",
+    model.fieldset(
+        'waerme_kaelte',
+        label=u"Wärme / Kälte",
 #        fields = ['en407', 'brennverhalten', 'kontaktwaerme', 'konvektive_hitze', 'strahlungswaerme',
 #                  'metallspritzer','fluessigesmetall', 'en511', 'konvektive_kaelte', 'kontaktkaelte',
 #                  'wasserdichtigkeit'],
-#    )
+        fields = ['en407', 'en511']
+    )
 
-#    en407 = schema.Bool(title=u"Norm 407",
-#                      description=u"Erfüllt der Schutzhandschuh die Norm 407 bzw. wurde er dagegen getestet?",)
+    en407 = schema.Bool(title=_(u"Norm 407"),
+                      description=_(u"Erfüllt der Schutzhandschuh die Norm 407 bzw. wurde er dagegen getestet?"),)
 
 #    brennverhalten = schema.Choice(title=u"Brennverhalten", vocabulary=catvalue1, required=False)
 #    kontaktwaerme = schema.Choice(title=u"Kontaktwärme", vocabulary=catvalue1, required=False)
@@ -139,20 +141,20 @@ class ISchutzhandschuh(model.Schema):
 #    fluessigesmetall = schema.Choice(title=u"Belastung durch große Mengen flüssigen Metalls",
 #                          vocabulary=catvalue1, required=False)
 
-#    en511 = schema.Bool(title=u"Norm 511",
-#                        description=u"Erfüllt der Schutzhandschuh die Norm 511 bzw. wurde er dagegen getestet?",)
+    en511 = schema.Bool(title=_(u"Norm 511"),
+                        description=_(u"Erfüllt der Schutzhandschuh die Norm 511 bzw. wurde er dagegen getestet?"),)
 
 #    konvektive_kaelte = schema.Choice(title=u"Konvektive Kälte", vocabulary=catvalue1, required=False)
 #    kontaktkaelte = schema.Choice(title=u"Kontaktkälte", vocabulary=catvalue1, required=False)
 #    wasserdichtigkeit = schema.Choice(title=u"Wasserdichtigkeit", vocabulary=catvalue5, required=False)
 
-#    m1.fieldset(
-#        'elektro',
-#        label=u"Elektro und Elektrostatik",
-#        fields=['esd'],
-#    )
+    model.fieldset(
+        'elektro',
+        label=_(u"Elektro und Elektrostatik"),
+        fields=['esd'],
+    )
 
-#    esd = schema.Bool(title=u"ESD Produktschutz")
+    esd = schema.Bool(title=_(u"ESD Produktschutz"))
 
 
 
