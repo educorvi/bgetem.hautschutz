@@ -195,3 +195,13 @@ pruefung375_5_2016 = SimpleVocabulary((
     SimpleTerm(u'bakterienpilze', u'bakterienpilze', u'Schutz vor Bakterien und Pilzen'),
     SimpleTerm(u'bakterienpilzeviren', u'bakterienpilzeviren', u'Schutz vor Bakterien, Pilzen und Viren')
     ))
+
+pruefung_weitere_chemie = SimpleVocabulary((
+    SimpleTerm(u'din_en_16523', u'din_en_16523', u'DIN EN 16523'),
+    ))
+
+pruefung_normen_mechanik = SimpleVocabulary((
+    SimpleTerm(u'din_en_381', u'din_en_381', u'DIN EN 381'),
+    SimpleTerm(u'din_en_388_alt', u'din_en_388_alt', u'DIN EN 388 vor 2016'),
+    SimpleTerm(u'din_en_388_2016', u'din_en_388_2016', u"EN 388:2016"),
+    ))

@@ -7,7 +7,7 @@ from plone.supermodel import model
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung, pruefung375_5_2016
+from bgetem.hautschutz.vocabularies import material, pruefung374alt, profilierung, cecatvalues, allergene_vocab, pruefung374neu, chemikalienpruefung, pruefung375_5_2016, pruefung_weitere_chemie, pruefung_normen_mechanik
 from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
@@ -60,7 +60,7 @@ class ISchutzhandschuh(model.Schema):
         'chemie',
         label=u"Chemische/Biologische Risiken",
         #fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
-        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5']
+        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'chemie_weitere']
     )
 
     directives.widget('norm374_2003', CheckBoxFieldWidget)
@@ -87,29 +87,30 @@ class ISchutzhandschuh(model.Schema):
                               default='keine',
                               required=False)
 
-#    form.widget(chemie_weitere=CheckBoxFieldWidget)
-#    chemie_weitere = schema.List(title=u"Prüfung gegen weitere Normen",
-#                                 description=u"Bitte wählen Sie aus, gegen welche Normen das Produkt außerdem geprüft wurde.", 
-#                                 value_type=schema.Choice(vocabulary=pruefung_weitere_chemie),
-#                                 required=False,)
+    directives.widget('chemie_weitere', CheckBoxFieldWidget)
+    chemie_weitere = schema.List(title=_(u"Prüfung gegen weitere Normen"),
+                                 description=_(u"Bitte wählen Sie aus, gegen welche Normen das Produkt außerdem geprüft wurde."), 
+                                 value_type=schema.Choice(vocabulary=pruefung_weitere_chemie),
+                                 required=False,)
 
-#    form.widget(gefahrstoffschutz=DataGridFieldFactory)
+#    directives.widget('gefahrstoffschutz', DataGridFieldFactory)
 #    form.omitted(IEditForm, 'gefahrstoffschutz')
 #    gefahrstoffschutz = schema.List(title = u'Gefahrstoffschutz für dieses Produkt.',
 #                        value_type=DictRow(title=u"Gefahrstoff", schema=IGefahrstoffe),
 #                        required = False,)
 
-#    m1.fieldset(
-#        'mechanik',
-#        label=u"Mechanische Risiken",
+    model.fieldset(
+        'mechanik',
+        label=u"Mechanische Risiken",
 #        fields=['mechanik', 'abrieb', 'schnittcoup', 'riss', 'stick', 'schnittiso', 'stoss']
-#    )
+        fields=['mechanik']
+    )
 
-#    form.widget(mechanik=CheckBoxFieldWidget)
-#    mechanik = schema.List(title=u"Prüfung gegen Normen der mechanischen Beständigkeit",
-#                           description=u"Bitte wählen Sie aus, gegen welche Normen der Handschuh geprüft wurde.",
-#                           value_type=schema.Choice(vocabulary=pruefung_normen_mechanik),
-#                           required=False)
+    directives.widget('mechanik', CheckBoxFieldWidget)
+    mechanik = schema.List(title=_(u"Prüfung gegen Normen der mechanischen Beständigkeit"),
+                           description=_(u"Bitte wählen Sie aus, gegen welche Normen der Handschuh geprüft wurde."),
+                           value_type=schema.Choice(vocabulary=pruefung_normen_mechanik),
+                           required=False)
 
 #    abrieb = schema.Choice(title=u"Abriebfestigkeit", vocabulary=catvalue1, required=False)
 #    schnittcoup = schema.Choice(title=u"Schnittfestigkeit (Coup-Test)", vocabulary=catvalue2, required=False)
