@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="hautpflegemittel-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".hautpflegemittel_view.HautpflegemittelView"
+    template="hautpflegemittel_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="hautreinigungsmittel-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".hautreinigungsmittel_view.HautreinigungsmittelView"
