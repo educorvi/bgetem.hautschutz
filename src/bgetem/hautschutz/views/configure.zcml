@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="hautschutzmittel-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".hautschutzmittel_view.HautschutzmittelView"
+    template="hautschutzmittel_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="desinfektionsmittel-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".desinfektionsmittel_view.DesinfektionsmittelView"
