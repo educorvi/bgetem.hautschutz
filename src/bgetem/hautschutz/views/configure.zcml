@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="schutzhandschuh-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".schutzhandschuh_view.SchutzhandschuhView"
+    template="schutzhandschuh_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="hautpflegemittel-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".hautpflegemittel_view.HautpflegemittelView"
