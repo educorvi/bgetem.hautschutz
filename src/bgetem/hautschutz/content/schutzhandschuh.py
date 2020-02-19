@@ -24,7 +24,7 @@ from z3c.form.browser.radio import RadioFieldWidget
 #from collective.z3cform.datagridfield import DictRow
 
 class ISchutzhandschuh(model.Schema):
-    """ 
+    """
     Schema eines Schutzhandschuhs
     """
 
@@ -35,10 +35,9 @@ class ISchutzhandschuh(model.Schema):
     bild = NamedBlobImage(title=_(u"Produktbild"), required=False)
 
     hersteller = RelationChoice(
-            title=_(u"Hersteller oder Lieferant"),
-            source=CatalogSource(portal_type="Document",),
-            required=False,
-            )
+        title=_(u"Hersteller oder Lieferant"),
+        source=CatalogSource(portal_type=["Folder", "Hersteller"]),
+        required=False)
 
     directives.widget('material_aussen', CheckBoxFieldWidget)
     material_aussen = schema.List(title=_(u"Material außen"), value_type=schema.Choice(vocabulary=material), required=False,)
@@ -92,7 +91,7 @@ class ISchutzhandschuh(model.Schema):
 
     directives.widget('chemie_weitere', CheckBoxFieldWidget)
     chemie_weitere = schema.List(title=_(u"Prüfung gegen weitere Normen"),
-                                 description=_(u"Bitte wählen Sie aus, gegen welche Normen das Produkt außerdem geprüft wurde."), 
+                                 description=_(u"Bitte wählen Sie aus, gegen welche Normen das Produkt außerdem geprüft wurde."),
                                  value_type=schema.Choice(vocabulary=pruefung_weitere_chemie),
                                  required=False,)
 

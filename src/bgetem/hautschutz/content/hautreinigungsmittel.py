@@ -18,7 +18,7 @@ from bgetem.hautschutz import _
 
 
 class IHautreinigungsmittel(model.Schema):
-    """ 
+    """
     Schema eines Hautreinigungsmittels
     """
 
@@ -42,8 +42,9 @@ class IHautreinigungsmittel(model.Schema):
 
     hersteller = RelationChoice(
         title=_(u"Hersteller oder Lieferant"),
-        source=CatalogSource(portal_type="Document",),
-        required=False,)
+        source=CatalogSource(portal_type=["Folder", "Hersteller"]),
+        required=False)
+
 
 
 @implementer(IHautreinigungsmittel)

@@ -17,4 +17,42 @@ class DesinfektionsmittelView(BrowserView):
         return self.index()
 
     def get_herstellerdaten(self):
-        return u'Hallo Welt'        
+        herstellerdaten = {}
+        if self.context.hersteller:
+            hersteller = self.context.hersteller.to_object
+            herstellerdaten['name'] = hersteller.title
+            herstellerdaten['anschrift1'] = hersteller.anschrift1
+            herstellerdaten['anschrift2'] = hersteller.anschrift2
+            herstellerdaten['anschrift3'] = hersteller.anschrift3
+            herstellerdaten['telefon'] = hersteller.telefon
+            herstellerdaten['email'] = hersteller.email
+            herstellerdaten['homepage'] = hersteller.homepage
+        return herstellerdaten
+
+    def producktname(self):
+        title = self.context.title
+        return title
+
+    def anwendungsbereich(self):
+        anwendungsbereich = self.context.anwendungsbereich
+        return anwendungsbereich
+
+    def produktgruppe(self):
+        produktgruppe = self.context.produktgruppe
+        return produktgruppe
+
+    def wirksamkeit(self):
+        wirksamkeit = self.context.wirksamkeit
+        return wirksamkeit
+
+    def einwirkung(self):
+        einwirkung = self.context.einwirkung
+        return einwirkung
+
+    def pruefung(self):
+        pruefung = self.context.pruefung
+        return pruefung
+
+    def bemerkungen(self):
+        bemerkungen = self.context.bemerkungen
+        return bemerkungen

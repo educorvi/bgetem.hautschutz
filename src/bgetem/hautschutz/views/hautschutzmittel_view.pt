@@ -22,7 +22,7 @@
             <tbody>
               <tr>
                 <th scope="row">Producktname:</th>
-                <td></td>
+                <td><span tal:content="view/producktname"></span></td>
               </tr>
               <tr>
                 <th scope="row">Hersteller:</th>
@@ -46,7 +46,35 @@
               </tr>
               <tr>
                 <th scope="row">E-mail:</th>
-                <td>max@mustermann.de</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">Website:</th>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Eigenschaft</th>
+                <th scope="col">Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
               </tr>
             </tbody>
           </table>

@@ -36,9 +36,9 @@ class IHautpflegemittel(model.Schema):
 
     hersteller = RelationChoice(
         title=_(u"Hersteller oder Lieferant"),
-        source=CatalogSource(portal_type="Document",),
-        required=False,
-        )
+        source=CatalogSource(portal_type=["Folder", "Hersteller"]),
+        required=False)
+
 
 
 @implementer(IHautpflegemittel)

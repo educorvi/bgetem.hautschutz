@@ -17,7 +17,7 @@ class IHautschutzmittel(model.Schema):
     """
     Schema eines Hautschutzmittels
     """
-    
+
     title = schema.TextLine(title=_(u"Produktname"))
 
     gefaehrdung = schema.List(title=_(u'Gefährdung'), value_type=schema.Choice(vocabulary=hautschutzmittelanwendungen, required=False), required=False)
@@ -39,6 +39,7 @@ class IHautschutzmittel(model.Schema):
     bemerkungen = schema.Text(title=_(u"Bemerkungen"), required=False)
 
     bild = NamedBlobImage(title=_(u'Produktbild'), required=False)
+
 
 
 @implementer(IHautschutzmittel)

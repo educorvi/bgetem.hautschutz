@@ -29,7 +29,7 @@ class IDesinfektionsmittel(model.Schema):
             default=u'haendedesinketionsmittel',
             required=True,
     )
-    
+
     wirksamkeit = schema.List(
         title=_(u"Wirksamkeit"),
         value_type=schema.Choice(
@@ -56,9 +56,10 @@ class IDesinfektionsmittel(model.Schema):
 
     hersteller = RelationChoice(
         title=_(u"Hersteller oder Lieferant"),
-        source=CatalogSource(portal_type="Document",),
-        required=False,
-    )
+        source=CatalogSource(portal_type=["Folder", "Hersteller"]),
+        required=False)
+
+
 
 class Desinfektionsmittel(Container):
     """

@@ -5,14 +5,15 @@
       i18n:domain="bgetem.hautschutz"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
           <img tal:attributes="src string:${context/absolute_url}/@@images/bild" class="img-thumbnail" alt="Responsive image"></img>
         </div>
         <div class="col-12 col-md-8">
-          <table class="table">
+          <table class="table" tal:define="hersteller view/get_herstellerdaten">
             <thead>
               <tr>
                 <th scope="col">Eigenschaft</th>
@@ -21,39 +22,64 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Producktname:</th>
-                <td></td>
+                <th scope="row">Produktname:</th>
+                <td><span tal:content="view/producktname"></span></td>
               </tr>
               <tr>
                 <th scope="row">Hersteller:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/name"></span></td>
               </tr>
               <tr>
-                <th scope="row">Ausschrift 1:</th>
-                <td></td>
+                <th scope="row">Anschrift 1:</th>
+                <td><span tal:condition="hersteller" tal:content="hersteller/anschrift1"></span></td>
               </tr>
               <tr>
-                <th scope="row">Ausschrift 2:</th>
-                <td></td>
+                <th scope="row">Anschrift 2:</th>
+                <td><span tal:condition="hersteller" tal:content="hersteller/anschrift2"></span></td>
               </tr>
               <tr>
-                <th scope="row">Ausschrift 3:</th>
-                <td></td>
+                <th scope="row">Anschrift 3:</th>
+                <td><span tal:condition="hersteller" tal:content="hersteller/anschrift3"></span></td>
               </tr>
               <tr>
                 <th scope="row">Tel:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/telefon"></span></td>
               </tr>
               <tr>
-                <th scope="row">E-mail:</th>
-                <td>max@mustermann.de</td>
+                <th scope="row">E-Mail:</th>
+                <td><a tal:condition="hersteller" tal:content="hersteller/email" tal:attributes="href hersteller/email" class="badge badge-light"></a></td>
+              </tr>
+              <tr>
+                <th scope="row">Website:</th>
+                <td><a tal:condition="hersteller" tal:content="hersteller/homepage" tal:attributes="href hersteller/homepage" class="badge badge-light"></a></td>
               </tr>
             </tbody>
           </table>
-          <span tal:content="view/get_herstellerdaten"/>
+        </div>
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Titel</th>
+                <th scope="col">Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Wirksamkeit</th>
+                <td>
+                  <ul tal:define="wirksamkeiten context/wirksamkeit">
+                    <li tal:repeat="wirksamkeit wirksamkeiten" tal:content="wirksamkeit"></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </metal:block>
+
+  </tal:main-macro>
+</metal:main>
 </body>
 </html>

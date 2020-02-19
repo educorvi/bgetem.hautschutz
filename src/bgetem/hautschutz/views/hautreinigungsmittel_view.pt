@@ -12,7 +12,7 @@
           <img tal:attributes="src string:${context/absolute_url}/@@images/bild" class="img-thumbnail" alt="Responsive image"></img>
         </div>
         <div class="col-12 col-md-8">
-          <table class="table">
+          <table class="table" tal:define="hersteller view/get_herstellerdaten">
             <thead>
               <tr>
                 <th scope="col">Eigenschaft</th>
@@ -22,31 +22,59 @@
             <tbody>
               <tr>
                 <th scope="row">Producktname:</th>
-                <td></td>
+                <td><span tal:content="view/producktname"></span></td>
               </tr>
               <tr>
                 <th scope="row">Hersteller:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/name"></span></td>
               </tr>
               <tr>
                 <th scope="row">Ausschrift 1:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/anschrift1"></span></td>
               </tr>
               <tr>
                 <th scope="row">Ausschrift 2:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/anschrift2"></span></td>
               </tr>
               <tr>
                 <th scope="row">Ausschrift 3:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/anschrift3"></span></td>
               </tr>
               <tr>
                 <th scope="row">Tel:</th>
-                <td></td>
+                <td><span tal:condition="hersteller" tal:content="hersteller/telefon"></span></td>
               </tr>
               <tr>
                 <th scope="row">E-mail:</th>
-                <td>max@mustermann.de</td>
+                <td><a tal:condition="hersteller" tal:content="hersteller/email" href="" class="badge badge-light"></a></td>
+              </tr>
+              <tr>
+                <th scope="row">Website:</th>
+                <td><a tal:condition="hersteller" tal:content="hersteller/homepage" href="#" class="badge badge-light"></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Eigenschaft</th>
+                <th scope="col">Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
               </tr>
             </tbody>
           </table>
