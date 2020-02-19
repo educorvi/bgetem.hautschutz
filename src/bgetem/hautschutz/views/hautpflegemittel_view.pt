@@ -5,13 +5,16 @@
       i18n:domain="bgetem.hautschutz"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
+   <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
           <img tal:attributes="src string:${context/absolute_url}/@@images/bild" class="img-thumbnail" alt="Responsive image"></img>
         </div>
         <div class="col-12 col-md-8">
+          <h1 tal:content="context/title"></h1>
+          <h2 tal:content="context/description"></h2>
           <table class="table" tal:define="hersteller view/get_herstellerdaten">
             <thead>
               <tr>
@@ -56,6 +59,7 @@
           </table>
         </div>
         <div class="col-12">
+          <span tal:content="context/bemerkungen"></span>
           <table class="table">
             <thead>
               <tr>
@@ -66,17 +70,34 @@
             <tbody>
               <tr>
                 <th scope="row">Inhaltsstoffe:</th>
-                <td><span tal:content="view/inhaltsstoffe"></span></td>
+                <td>
+                  <ul tal:define="inhaltsstoffen context/inhaltsstoffe">
+                    <li tal:repeat="inhaltsstoffe inhaltsstoffen" tal:content="inhaltsstoffe"></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
-                <th scope="row">Duftstoffe:</th>
-                <td><span tal:content="view/duftstoffe"></span></td>
+                <th scope="row">Konservierungsmittel:</th>
+                <td>
+                  <ul tal:define="konservierungsmitteln context/konservierungsmittel">
+                    <li tal:repeat="konservierungsmittel konservierungsmitteln" tal:content="konservierungsmittel"></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+              <th scope="row">Duftstoffe:</th>
+                <td>
+                  <ul tal:define="Duftstoffe context/duftstoffe">
+                    <li tal:repeat="duftstoffe Duftstoffe" tal:content="duftstoffe"></li>
+                  </ul>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </metal:block>
+  </tal:main-macro>
+</metal:main>
 </body>
 </html>

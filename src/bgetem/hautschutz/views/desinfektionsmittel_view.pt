@@ -59,6 +59,7 @@
           </table>
         </div>
         <div class="col-12">
+          <span tal:content="context/bemerkungen"></span>
           <table class="table">
             <thead>
               <tr>
@@ -68,19 +69,30 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Wirksamkeit</th>
+                <th scope="row">Wirksamkeit:</th>
                 <td>
-                  <ul tal:define="wirksamkeiten context/wirksamkeit">
+                  <ul tal:define="wirksamkeiten view/get_wirksamkeit">
                     <li tal:repeat="wirksamkeit wirksamkeiten" tal:content="wirksamkeit"></li>
                   </ul>
                 </td>
+              </tr>
+              <tr>
+                <th scope="row">Anwendungsbereich:</th>
+                <td><span tal:content="context/anwendungsbereich"></td>
+              </tr>
+              <tr>
+                <th scope="row">Produktgruppe:</th>
+                <td><span tal:content="context/produktgruppe"></td>
+              </tr>
+              <tr>
+                <th scope="row">Einwirkung:</th>
+                <td><span tal:content="context/einwirkung"></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-
   </tal:main-macro>
 </metal:main>
 </body>

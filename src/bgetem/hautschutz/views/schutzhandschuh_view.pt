@@ -5,13 +5,16 @@
       i18n:domain="bgetem.hautschutz"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
           <img tal:attributes="src string:${context/absolute_url}/@@images/bild" class="img-thumbnail" alt="Responsive image"></img>
         </div>
         <div class="col-12 col-md-8">
+          <h1 tal:content="context/title"></h1>
+          <h2 tal:content="context/description"></h2>
           <table class="table" tal:define="hersteller view/get_herstellerdaten">
             <thead>
               <tr>
@@ -65,22 +68,55 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+                <th scope="row">Material Außen:</th>
+                <td>
+                  <ul>
+                    <li tal:repeat="material context/material_aussen" tal:content="material"></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
+                <th scope="row">Material Innen:</th>
+                <td><span tal:content="context/material_innen"></span></td>
               </tr>
               <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
+                <th scope="row">Profilierung:</th>
+                <td><span tal:content="context/profilierung"></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Schichtstaerke (Min):</th>
+                <td><span tal:content="context/schichtstaerke_min"></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Schichtstaerke (Max):</th>
+                <td><span tal:content="context/schichtstaerke_max"></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Gesamtlaenge (von):</th>
+                <td><span tal:content="context/gesamtlaenge_von"></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Gesamtlaenge (bis):</th>
+                <td><span tal:content="context/gesamtlaenge_bis"></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Cecategory:</th>
+                <td><span tal:content="context/cecategory"></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Allergene:</th>
+                <td>
+                  <ul tal:define="Allergene context/allergene">
+                    <li tal:repeat="allergene Allergene" tal:content="allergene"></li>
+                  </ul>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </metal:block>
+    </tal:main-macro>
+  </metal:main>
 </body>
 </html>

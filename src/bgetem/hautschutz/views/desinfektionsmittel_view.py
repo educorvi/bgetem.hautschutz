@@ -2,6 +2,7 @@
 
 from bgetem.hautschutz import _
 from Products.Five.browser import BrowserView
+from bgetem.hautschutz.vocabularies import desinf_wirksamkeit
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -56,3 +57,9 @@ class DesinfektionsmittelView(BrowserView):
     def bemerkungen(self):
         bemerkungen = self.context.bemerkungen
         return bemerkungen
+
+    def get_wirksamkeit(self):
+        wirksamkeiten = []
+        for i in self.context.wirksamkeit:
+            wirksamkeiten.append(desinf_wirksamkeit.getTerm(i).title)
+        return wirksamkeiten
