@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="bgetem.hautschutz.AddTaetigkeit"
+        title="bgetem.hautschutz: Add Taetigkeit"
+    />
+
+
+    <permission
         id="bgetem.hautschutz.AddDesinfektionsmittel"
         title="bgetem.hautschutz: Add Desinfektionsmittel"
     />

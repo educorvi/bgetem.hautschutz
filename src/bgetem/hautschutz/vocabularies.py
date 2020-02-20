@@ -240,3 +240,22 @@ catvalue5 = SimpleVocabulary.fromItems((
     ("x", "x"),
     ("0", "0"),
     ("1", "1")))
+
+gefaehrdungen = SimpleVocabulary((
+    SimpleTerm(value=u"b", token=u"b", title=u"Biologische Gefährdungen"),
+    SimpleTerm(value=u"c", token=u"c", title=u"Chemische Gefährdungen"),
+    SimpleTerm(value=u"m", token=u"m", title=u"Mechanische Gefährdungen"),
+    ))
+
+rankvalue = SimpleVocabulary((
+    SimpleTerm(u'nicht_relevant', u'nicht_relevant', u'nicht relevant'),
+    SimpleTerm(u'1', u'gering', u'gering'),
+    SimpleTerm(u'2', u'mittel', u'mittel'),
+    SimpleTerm(u'3', u'hoch', u'hoch')
+    ))
+
+biologische_gefaehrdung = SimpleVocabulary((
+    SimpleTerm(u'keine', u'keine', u'keine'),
+    SimpleTerm(u'bakterienpilze', u'bakterienpilze', u'Bakterien und Pilze'),
+    SimpleTerm(u'bakterienpilzeviren', u'bakterienpilzeviren', u'Bakterien, Pilze und Viren')
+    ))
