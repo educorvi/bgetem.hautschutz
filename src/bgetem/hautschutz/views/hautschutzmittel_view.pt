@@ -41,9 +41,9 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Gefaehrdung:</th>
+                <th scope="row">Gefährdung:</th>
                 <td>
-                  <ul tal:define="gefaehrdungen context/gefaehrdung">
+                  <ul tal:define="gefaehrdungen view/get_gefaehrdung">
                     <li tal:repeat="gefaehrdung gefaehrdungen" tal:content="gefaehrdung"></li>
                   </ul>
                 </td>
@@ -51,7 +51,7 @@
               <tr>
                 <th scope="row">Kategorie:</th>
                 <td>
-                  <ul tal:define="kategorien context/kategorie">
+                  <ul tal:define="kategorien view/get_kategorie">
                     <li tal:repeat="kategorie kategorien" tal:content="kategorie"></li>
                   </ul>
                 </td>
@@ -77,8 +77,8 @@
               <tr>
                 <th scope="row">Inhaltsstoffe:</th>
                 <td>
-                  <ul tal:define="Inhaltsstoffe context/inhaltsstoffe">
-                    <li tal:repeat="inhaltsstoffe Inhaltsstoffe" tal:content="inhaltsstoffe"></li>
+                  <ul tal:define="inhaltsstoffen context/inhaltsstoffe">
+                    <li tal:repeat="inhaltsstoffe inhaltsstoffen" tal:content="inhaltsstoffe"></li>
                   </ul>
                 </td>
               </tr>

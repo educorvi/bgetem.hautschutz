@@ -2,6 +2,9 @@
 
 from bgetem.hautschutz import _
 from Products.Five.browser import BrowserView
+from bgetem.hautschutz.vocabularies import hautschutzmittelanwendungen
+from bgetem.hautschutz.vocabularies import hskategorieVocabulary
+from bgetem.hautschutz.vocabularies import zusatzVocabulary
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -37,12 +40,24 @@ class HautschutzmittelView(BrowserView):
         gefaehrdung = self.context.gefaehrdung
         return gefaehrdung
 
+    def get_gefaehrdung(self):
+        gefaehrdungen = []
+        for i in self.context.gefaehrdung:
+            gefaehrdungen.append(hautschutzmittelanwendungen.getTerm(i).title)
+        return gefaehrdungen
+
     def kategorie(self):
-        kategorie = self.cintext.kategorie
+        kategorie = self.context.kategorie
         return kategorie
 
+    def get_kategorie(self):
+        kategorien = []
+        for i in self.context.kategorie:
+            kategorien.append(hskategorieVocabulary.getTerm(i).title)
+        return kategorien
+
     def uvschutzfaktor(self):
-        uvschutzfaktor = self.cintext.uvschutzfaktor
+        uvschutzfaktor = self.context.uvschutzfaktor
         return uvschutzfaktor
 
     def schweissrauche(self):
@@ -52,6 +67,12 @@ class HautschutzmittelView(BrowserView):
     def zusatzfunktion(self):
         zusatzfunktion = self.context.zusatzfunktion
         return zusatzfunktion
+
+    #def get_zusatzfunktion(self):
+        #zusatzfunktionen = []
+        #for i in self.context.zusatzfunktion:
+            #zusatzfunktionen.append(zusatzVocabulary.getTerm(i).title)
+        #return zusatzfunktionen
 
     def inhaltsstoffe(self):
         inhaltsstoffe = self.context.inhaltsstoffe

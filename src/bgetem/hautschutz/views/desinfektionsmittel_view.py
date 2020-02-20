@@ -3,7 +3,8 @@
 from bgetem.hautschutz import _
 from Products.Five.browser import BrowserView
 from bgetem.hautschutz.vocabularies import desinf_wirksamkeit
-
+from bgetem.hautschutz.vocabularies import desinf_anwendung
+from bgetem.hautschutz.vocabularies import desinf_produktgruppe
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -38,13 +39,32 @@ class DesinfektionsmittelView(BrowserView):
         anwendungsbereich = self.context.anwendungsbereich
         return anwendungsbereich
 
+    def get_anwendung(self):
+        anwendungen = []
+        for i in self.context.anwendungsbereich:
+            anwendungen.append(desinf_anwendung.getTerm(i).title)
+        return anwendungen
+
     def produktgruppe(self):
         produktgruppe = self.context.produktgruppe
         return produktgruppe
 
+    def get_produktgruppe(self):
+        produktgruppen = []
+        for i in self.context.produktgruppe:
+            produktgruppen.append(desinf_produktgruppe.getTerm(i).title)
+        return produktgruppen
+
+
     def wirksamkeit(self):
         wirksamkeit = self.context.wirksamkeit
         return wirksamkeit
+
+    def get_wirksamkeit(self):
+        wirksamkeiten = []
+        for i in self.context.wirksamkeit:
+            wirksamkeiten.append(desinf_wirksamkeit.getTerm(i).title)
+        return wirksamkeiten
 
     def einwirkung(self):
         einwirkung = self.context.einwirkung
@@ -58,8 +78,3 @@ class DesinfektionsmittelView(BrowserView):
         bemerkungen = self.context.bemerkungen
         return bemerkungen
 
-    def get_wirksamkeit(self):
-        wirksamkeiten = []
-        for i in self.context.wirksamkeit:
-            wirksamkeiten.append(desinf_wirksamkeit.getTerm(i).title)
-        return wirksamkeiten
