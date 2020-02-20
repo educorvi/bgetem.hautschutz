@@ -78,7 +78,7 @@
               </tr>
               <tr>
                 <th scope="row">Anwendungsbereich:</th>
-                <td><span tal:content="context/anwendungsbereich"></td>
+                <td><span tal:content="context/anwendungsbereich"></span></td>
               </tr>
               <tr>
                 <th scope="row">Produktgruppe:</th>

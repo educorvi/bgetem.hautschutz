@@ -71,7 +71,7 @@
               <tr>
                 <th scope="row">Zusatzfunktion:</th>
                 <td>
-                  <span tal:content="context/zusatzfunktion"></span>
+                  <span tal:content="view/get_zusatzfunktion"></span>
                 </td>
               </tr>
               <tr>

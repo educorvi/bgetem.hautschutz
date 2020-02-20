@@ -77,11 +77,19 @@
               </tr>
               <tr>
                 <th scope="row">Material Innen:</th>
-                <td><span tal:content="context/material_innen"></span></td>
+                <td>
+                  <ul tal:define="materialien context/material_innen">
+                    <li tal:repeat="material_innen materialien" tal:content="material_innen"></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
                 <th scope="row">Profilierung:</th>
-                <td><span tal:content="context/profilierung"></span></td>
+                <td>
+                  <ul tal:define="profilierungen view/get_profilierung">
+                    <li tal:repeat="profilierung profilierungen" tal:content="profilierung"></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
                 <th scope="row">Schichtstaerke (Min):</th>
