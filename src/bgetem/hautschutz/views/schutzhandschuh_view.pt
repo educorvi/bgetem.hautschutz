@@ -70,16 +70,16 @@
               <tr>
                 <th scope="row">Material Außen:</th>
                 <td>
-                  <ul tal:define="materialien context/material_aussen">
-                    <li tal:repeat="material_aussen materialien" tal:content="material_aussen"></li>
+                  <ul tal:define="material context/material_aussen">
+                    <li tal:repeat="material_aussen material" tal:content="material_aussen"></li>
                   </ul>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Material Innen:</th>
                 <td>
-                  <ul tal:define="materialien context/material_innen">
-                    <li tal:repeat="material_innen materialien" tal:content="material_innen"></li>
+                  <ul tal:define="material context/material_innen">
+                    <li tal:repeat="material_innen material" tal:content="material_innen"></li>
                   </ul>
                 </td>
               </tr>

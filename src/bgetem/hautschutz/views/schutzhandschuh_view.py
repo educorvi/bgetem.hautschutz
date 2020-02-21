@@ -35,16 +35,16 @@ class SchutzhandschuhView(BrowserView):
         title = self.context.title
         return title
 
-    def get_material_aussen(self):
+    def get_materialaussen(self):
         materialienaussen = []
         for i in self.context.material_aussen:
-            materialien.append(material.getTrem(i).title)
+            materialienaussen.append(material.getTrem(i).title)
         return materialienaussen
 
-    def get_material_innen(self):
+    def get_materialinnen(self):
         materialieninnen = []
-        for i in self.context.material_aussen:
-            materialien.append(material.getTrem(i).title)
+        for i in self.context.material_innen:
+            materialieninnen.append(material.getTrem(i).title)
         return materialieninnen
 
     def get_profilierung(self):
