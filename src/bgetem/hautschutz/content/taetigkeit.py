@@ -10,9 +10,9 @@ from zope import schema
 from zope.interface import implementer
 
 
-from bgetem.hautschutzplan import _
+from bgetem.hautschutz import _
 
-from bgetem.hautschutzplan.vocabularies import gefaehrdungen, rankvalue, biologische_gefaehrdung
+from bgetem.hautschutz.vocabularies import gefaehrdungen, rankvalue, biologische_gefaehrdung
 
 class ITaetigkeit(model.Schema):
     """ Marker interface and Dexterity Python Schema for Taetigkeit
@@ -28,7 +28,7 @@ class ITaetigkeit(model.Schema):
         description=_(u"Bitte wählen Sie hier die primäre Gefährdung bei dieser Tätigkeit aus."),
         source = gefaehrdungen,
         required = True,
-    )  
+    )
 
 #    model.fieldset(
 #        'chemie',
@@ -79,9 +79,9 @@ class ITaetigkeit(model.Schema):
     kontaktwaerme = schema.Choice(title=_(u"Anforderung an die Kontaktwärme"), vocabulary=rankvalue, default='nicht_relevant', required=False)
     konvektive_hitze = schema.Choice(title=_(u"Anforderung an die Konvektive Hitze"), vocabulary=rankvalue, default='nicht_relevant', required=False)
     strahlungswaerme = schema.Choice(title=_(u"Anforderung an die Strahlungswärme"), vocabulary=rankvalue, default='nicht_relevant', required=False)
-    metallspritzer = schema.Choice(title=_(u"Anforderung an die Belastung durch kleine Spritzer geschmolzenen Metalls"), 
+    metallspritzer = schema.Choice(title=_(u"Anforderung an die Belastung durch kleine Spritzer geschmolzenen Metalls"),
                                vocabulary=rankvalue, default='nicht_relevant', required=False)
-    fluessigesmetall = schema.Choice(title=_(u"Anforderung an die Belastung durch große Mengen flüssigen Metalls"), 
+    fluessigesmetall = schema.Choice(title=_(u"Anforderung an die Belastung durch große Mengen flüssigen Metalls"),
                           vocabulary=rankvalue, default='nicht_relevant', required=False)
 
     konvektive_kaelte = schema.Choice(title=_(u"Anforderung an die Konvektive Kälte"), vocabulary=rankvalue, default='nicht_relevant', required=False)

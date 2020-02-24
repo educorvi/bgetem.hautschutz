@@ -5,9 +5,101 @@
       i18n:domain="bgetem.hautschutz"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+      <h1 tal:content="context/title"></h1>
+      <h2 tal:content="context/description"></h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Eigenschaft:</th>
+            <th scope="col">Titel:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Bemerkung:</th>
+            <td><span tal:content="context/text"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Primäre Gefährdung:</th>
+            <td><span tal:content="view/get_gefaehrdung"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Biologischen Gefährdungen:</th>
+            <td><span tal:content="context/biologie"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Mechanik:</th>
+            <td><span tal:content="context/mechanik"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Kettensäge:</th>
+            <td><span tal:content="context/kettensaege"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Abriebfestigkeit:</th>
+            <td><span tal:content="view/get_abrieb"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Schnittfestigkeit:</th>
+            <td><span tal:content="view/get_schnitt"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Weiterreißfestigkeit:</th>
+            <td><span tal:content="view/get_riss"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Durchstichfestigkeit:</th>
+            <td><span tal:content="view/get_stick"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Stoßeinwirkung:</th>
+            <td><span tal:content="view/get_stoss"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Thermisch:</th>
+            <td><span tal:content="context/thermisch"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Brennverhalten:</th>
+            <td><span tal:content="view/get_brennverhalten"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Kontaktwärme:</th>
+            <td><span tal:content="view/get_kontaktwaerme"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Konvektive Hitze:</th>
+            <td><span tal:content="view/get_konvektivehitze"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Strahlungswärme:</th>
+            <td><span tal:content="view/get_strahlungswaerme"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Spritzer geschmolzenen Metalls:</th>
+            <td><span tal:content="view/get_metallspritzer"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">flüssigen Metalls:</th>
+            <td><span tal:content="view/get_fluessigesmetall"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Konvektive Kälte:</th>
+            <td><span tal:content="view/get_konvektivekaelte"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Kontaktkälte:</th>
+            <td><span tal:content="view/get_kontaktkaelte"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Wasserdichtigkeit:</th>
+            <td><span tal:content="view/get_wasserdichtigkeit"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </tal:main-macro>
+  </metal:main>
 </body>
 </html>
