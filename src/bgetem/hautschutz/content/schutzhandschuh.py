@@ -58,11 +58,20 @@ class ISchutzhandschuh(model.Schema):
 
     allergene = schema.List(title=_(u"Allergene"), value_type=schema.Choice(vocabulary=allergene_vocab), required=False)
 
+    esd = schema.Bool(title=_(u"ESD Produktschutz"))
+
+    model.fieldset(
+        'biologie',
+        label=u"Biologische Risiken",
+        #fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
+        fields=['norm374_5',]
+    )
+
     model.fieldset(
         'chemie',
-        label=u"Chemische/Biologische Risiken",
+        label=u"Chemische Risiken",
         #fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'gefahrstoffschutz']
-        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'norm374_5', 'chemie_weitere']
+        fields=['norm374_2003', 'norm374_2016', 'chemikalienliste', 'chemie_weitere']
     )
 
     directives.widget('norm374_2003', CheckBoxFieldWidget)
@@ -121,11 +130,16 @@ class ISchutzhandschuh(model.Schema):
     stoss = schema.Choice(title=u"Schutz gegen Stosseinwirkung", vocabulary=catvalue4, required=False)
 
     model.fieldset(
-        'waerme_kaelte',
-        label=u"Wärme / Kälte",
+        'hitze',
+        label=u"Hitze",
         fields = ['en407', 'brennverhalten', 'kontaktwaerme', 'konvektive_hitze', 'strahlungswaerme',
-                  'metallspritzer','fluessigesmetall', 'en511', 'konvektive_kaelte', 'kontaktkaelte',
-                  'wasserdichtigkeit'],
+                  'metallspritzer','fluessigesmetall']
+    )
+
+    model.fieldset(
+        'kaelte',
+        label=u"Kälte",
+        fields = ['en511', 'konvektive_kaelte', 'kontaktkaelte', 'wasserdichtigkeit']
     )
 
     en407 = schema.Bool(title=_(u"Norm 407"),
@@ -145,12 +159,23 @@ class ISchutzhandschuh(model.Schema):
     wasserdichtigkeit = schema.Choice(title=u"Wasserdichtigkeit", vocabulary=catvalue5, required=False)
 
     model.fieldset(
-        'elektro',
-        label=_(u"Elektro und Elektrostatik"),
-        fields=['esd'],
+        'elektrisch',
+        label=_(u"Elektrische Risiken"),
+        fields=['dummy_elektrisch'],
     )
 
-    esd = schema.Bool(title=_(u"ESD Produktschutz"))
+    dummy_elektrisch = schema.TextLine(title=u"Dummy-Feld Norm",
+                            description=u"Bereich für die Felder aus dem Bereich Elektrische Gefährdungen", required=False)
+
+    model.fieldset(
+        'schweisser',
+        label=_(u"Schweisser Schutzhandschuh"),
+        fields=['dummy_schweisser'],
+    )
+
+    dummy_schweisser = schema.TextLine(title=u"Dummy-Feld Norm",
+                            description=u"Bereich für die Felder aus dem Bereich Schweisser Schutzhandschuhe", required=False)
+
 
 
 

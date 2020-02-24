@@ -10,9 +10,9 @@ from zope import schema
 from zope.interface import implementer
 
 
-from bgetem.hautschutzplan import _
+from bgetem.hautschutz import _
 
-from bgetem.hautschutzplan.vocabularies import gefaehrdungen, rankvalue, biologische_gefaehrdung
+from bgetem.hautschutz.vocabularies import gefaehrdungen, rankvalue, biologische_gefaehrdung
 
 class ITaetigkeit(model.Schema):
     """ Marker interface and Dexterity Python Schema for Taetigkeit
