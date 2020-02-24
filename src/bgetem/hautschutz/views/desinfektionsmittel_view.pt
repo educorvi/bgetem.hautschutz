@@ -78,11 +78,11 @@
               </tr>
               <tr>
                 <th scope="row">Anwendungsbereich:</th>
-                <td><span tal:content="context/anwendungsbereich"></td>
+                <td><span tal:content="view/get_anwendung"></span></td>
               </tr>
               <tr>
                 <th scope="row">Produktgruppe:</th>
-                <td><span tal:content="context/produktgruppe"></td>
+                <td><span tal:content="view/get_produktgruppe"></td>
               </tr>
               <tr>
                 <th scope="row">Einwirkung:</th>

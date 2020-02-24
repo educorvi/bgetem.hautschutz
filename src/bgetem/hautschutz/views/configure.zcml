@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="taetigkeit-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".taetigkeit_view.TaetigkeitView"
+    template="taetigkeit_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="schutzhandschuh-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".schutzhandschuh_view.SchutzhandschuhView"

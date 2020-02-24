@@ -68,12 +68,6 @@ class HautschutzmittelView(BrowserView):
         zusatzfunktion = self.context.zusatzfunktion
         return zusatzfunktion
 
-    #def get_zusatzfunktion(self):
-        #zusatzfunktionen = []
-        #for i in self.context.zusatzfunktion:
-            #zusatzfunktionen.append(zusatzVocabulary.getTerm(i).title)
-        #return zusatzfunktionen
-
     def inhaltsstoffe(self):
         inhaltsstoffe = self.context.inhaltsstoffe
         return inhaltsstoffe
@@ -89,3 +83,9 @@ class HautschutzmittelView(BrowserView):
     def bemerkungen(self):
         bemerkungen = self.context.bemerkungen
         return bemerkungen
+
+    def get_zusatzfunktion(self):
+        zusatzfunktion = u""
+        if self.context.zusatzfunktion:
+            zusatzfunktion = zusatzVocabulary.getTerm(self.context.zusatzfunktion).title
+        return zusatzfunktion

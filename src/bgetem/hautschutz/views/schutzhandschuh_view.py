@@ -2,8 +2,8 @@
 
 from bgetem.hautschutz import _
 from Products.Five.browser import BrowserView
-from bgetem.hautschutz.vocabularies import material,profilierung
-
+from bgetem.hautschutz.vocabularies import material
+from bgetem.hautschutz.vocabularies import profilierung
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -35,8 +35,20 @@ class SchutzhandschuhView(BrowserView):
         title = self.context.title
         return title
 
-    def get_material_aussen(self):
-        materialien = []
+    def get_materialaussen(self):
+        materialienaussen = []
         for i in self.context.material_aussen:
-            materialien.append(material.getTrem(i).title)
-        return materialien
+            materialienaussen.append(material.getTrem(i).title)
+        return materialienaussen
+
+    def get_materialinnen(self):
+        materialieninnen = []
+        for i in self.context.material_innen:
+            materialieninnen.append(material.getTrem(i).title)
+        return materialieninnen
+
+    def get_profilierung(self):
+        profilierungen = []
+        for i in self.context.profilierung:
+            profilierungen.append(profilierung.getTerm(i).title)
+        return profilierungen

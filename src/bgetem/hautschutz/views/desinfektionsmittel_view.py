@@ -40,9 +40,9 @@ class DesinfektionsmittelView(BrowserView):
         return anwendungsbereich
 
     def get_anwendung(self):
-        anwendungen = []
-        for i in self.context.anwendungsbereich:
-            anwendungen.append(desinf_anwendung.getTerm(i).title)
+        anwendungen = u""
+        if self.context.anwendungsbereich:
+            anwendungen = desinf_anwendung.getTerm(self.context.anwendungsbereich).title
         return anwendungen
 
     def produktgruppe(self):
@@ -51,8 +51,8 @@ class DesinfektionsmittelView(BrowserView):
 
     def get_produktgruppe(self):
         produktgruppen = []
-        for i in self.context.produktgruppe:
-            produktgruppen.append(desinf_produktgruppe.getTerm(i).title)
+        if self.context.produktgruppe:
+            produktgruppen = desinf_produktgruppe.getTerm(self.context.produktgruppe).title
         return produktgruppen
 
 
